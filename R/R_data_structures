@@ -66,4 +66,66 @@ for (rows in 1:nrow(matrix1)){
 }
 
 # ---------------------------------- Arrays ----------------------------------
-# Array can have > 2 dimensions
+# Array can have > 2 dimensions, only one data type.
+array1 <- c(1:24)  # array with 1 dimenstion (vector)
+# array() - create an array, dim() - parameter to specify dimensions
+multiarray <- array(array1, dim = c(4,3,2))  # dim=c(rowns, columns, dimensions)
+multiarray[2,3,2]  # array[row, column, matrix level]
+multiarray[,c(1),1]  # access all items from first column from matrix 1
+2 %in% multiarray  # TRUE
+# dim() - rows & columns of array, length() - dimension of array(rowsxcolumnsxdims?)
+for (x in multiarray){
+	print(x)
+}
+
+# ------------------------------- Data frames ---------------------------
+# Can have different data types, BUT each column should have the same
+Data_frame <- data.frame(
+	Training = c("Stamina", "Strength", "Other"),
+    Pulse = c(100, 150, 120),
+    Duration = c(60, 30, 45)    
+)
+Data_frame2 <- data.frame (
+  Training = c("Stamina", "Stamina", "Strength"),
+  Pulse = c(140, 150, 160),
+  Duration = c(30, 30, 20)
+)
+Data_frame3 <- data.frame (
+  Steps = c(3000, 6000, 2000),
+  Calories = c(300, 400, 300)
+)
+# summary() - info about data frame liek median, mean, 3rd Qu., max
+summary(Data_frame)
+
+# To access items:
+Data_frame[1]  # Training Stamina Strength Other (in table fasion)
+Data_frame[["Training"]]  # Stamina Strength Other Levels: Other Stammina Strength
+Data_frame$Training  # same as above
+
+# rbind() - add a new row / bind data frames vertically
+New_row_DF <- rbind(Data_frame, c("Strength", 110, 110))
+New_DF_rbind <- rbind(Data_frame, Data_frame2)
+# cbind() - add a new column / bind data frames horizontally
+New_col_DF <- cbind(Data_frame, Steps = c(1000, 6000, 2000))
+New_DF_cbind <- cbind(Data_frame, Data_frame3)
+# c() to remove rows/columns
+New_DF <- Data_frame[c(-1), c(-1)]  # delete first row & column
+
+# dim() - rows&columns, nrow(), ncol(), length() - similar to ncol()
+
+# ---------------------------- factors -----------------------------------
+# used to categorise data
+# Create a factor
+# factor() - add vector as argument
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+# levels() - shows categories (levels)
+levels(music_genre)  # "Classic" "Jazz"    "Pop"     "Rock"
+
+# you can also add levels manually (parameter levels)
+ music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"), levels = c("Classic", "Jazz", "Pop", "Rock", "Other"))
+ 
+ music_genre[1]  # Jazz
+ music_genre[1] <- "Disco-polo"  # ERROR - you can't specify sth that doesn't exist there at all (there is no such level)
+ music genre[1] <- "Pop"  # works just fine (there is other "Pop" in the factor)
+ 
+# length(), 
