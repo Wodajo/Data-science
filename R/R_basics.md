@@ -1,3 +1,4 @@
+```R
 # print is a function
 print("Eluwiny")
 
@@ -100,3 +101,5 @@ my_function <- function(fname="John", age3=1) {  # create a function with a name
 
 print(my_function())
 print(my_function("Ceftolozan/tazobactam", 3))
+
+```

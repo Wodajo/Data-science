@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "975de14c34368887",
+    "type": "split",
+    "children": [
+      {
+        "id": "e60c39ce00aff340",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c657af10bdba51e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "bioinformatics/nanopore sequencing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9999fde5bec39377",
+    "type": "split",
+    "children": [
+      {
+        "id": "f31beef5be0190aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d37a517c70041388",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a101c8019f3cf553",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2e3b731bbb3115fc",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "558a5bb405e5f268",
+    "type": "split",
+    "children": [
+      {
+        "id": "6433446754bbbf4f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "409191ac307757b1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "bioinformatics/nanopore sequencing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6b6ed27d7e50b83a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "bioinformatics/nanopore sequencing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "413f1935a508db7f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2cd7d99a0100be85",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "bioinformatics/nanopore sequencing.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "c657af10bdba51e8",
+  "lastOpenFiles": [
+    "R/R_data_structures.md",
+    "bioinformatics/nanopore sequencing.md",
+    "bioinformatics/to do.md",
+    "R/usefull.md",
+    "R/R_basics.md",
+    "bioinformatics/unsorted.md",
+    "bioinformatics"
+  ]
+}

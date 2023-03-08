@@ -1,3 +1,4 @@
+```R
 # ---------------------------- Vectors ---------------------------
 # Vectors - list of items of the same type
 # c() - funtion to concatenate items (can be used to create vectors)
@@ -129,3 +130,4 @@ levels(music_genre)  # "Classic" "Jazz"    "Pop"     "Rock"
  music genre[1] <- "Pop"  # works just fine (there is other "Pop" in the factor)
  
 # length(), 
+```
