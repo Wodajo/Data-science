@@ -4,3 +4,4 @@ unique(data$death_dummy)  # 0 1  # check ifonly this values are there
 
 ```
 
+`less -S` - turn off line wrapping

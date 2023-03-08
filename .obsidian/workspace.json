@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bioinformatics/nanopore sequencing.md",
+                "file": "bioinformatics/nomencalture.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "47185b88bd1f8cf4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "bioinformatics/genomics file formats.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "bioinformatics/nanopore sequencing.md",
+                "file": "bioinformatics/genomics file formats.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "bioinformatics/nanopore sequencing.md",
+                "file": "bioinformatics/genomics file formats.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bioinformatics/nanopore sequencing.md"
+                "file": "bioinformatics/genomics file formats.md"
               }
             }
           }
@@ -146,12 +159,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c657af10bdba51e8",
+  "active": "47185b88bd1f8cf4",
   "lastOpenFiles": [
-    "R/R_data_structures.md",
-    "bioinformatics/nanopore sequencing.md",
-    "bioinformatics/to do.md",
     "R/usefull.md",
+    "bioinformatics/genomics file formats.md",
+    "bioinformatics/nomencalture.md",
+    "bioinformatics/to do.md",
+    "R/R_data_structures.md",
     "R/R_basics.md",
     "bioinformatics/unsorted.md",
     "bioinformatics"
