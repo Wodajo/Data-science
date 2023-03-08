@@ -1,4 +1,4 @@
-technologies used for sequencing (e.g. nanopore, illumina) have different primary, raw-data formats -> processed into secondary, common formats
+technologies used for sequencing (e.g. nanopore - fast5, illumina) have different primary, raw-data formats -> processed into secondary, common formats
 
 
 fasta -  just hold genomes (e.g. for reference genomes)
@@ -11,8 +11,8 @@ fastq - reads (info taken out of primary data)
 ```
 @A007:48:HV820381VDF:2:2421:1315462  # name of a read
 CCCCAATGCATGCTTATTGGCAATCCGTCTCC...  # sequence
-+  # linebreak?
-FFFFFFFFFFF:FF:FFFFFFFFFFF:FFFFFFFF  # base qualities (somehow info about quality scores)
++  # optional info line
+FFFFFFFFFFF:FF:FFFFFFFFFFF:FFFFFFFF  # quality score of each base in sequence
 ```
 
 mapping aka alignment - checking where reads (fastq) best match on reference genome (fasta)
