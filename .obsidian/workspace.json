@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ed5e5e636d655aa2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "bioinformatics/to do.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "bioinformatics/genomics file formats.md",
+                "file": "bioinformatics/to do.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "bioinformatics/genomics file formats.md",
+                "file": "bioinformatics/to do.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bioinformatics/genomics file formats.md"
+                "file": "bioinformatics/to do.md"
               }
             }
           }
@@ -159,15 +171,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "47185b88bd1f8cf4",
+  "active": "ed5e5e636d655aa2",
   "lastOpenFiles": [
+    "cli/basic b17(h/text processing/tr.md",
+    "cli/basic b17(h/text processing/sed.md",
+    "cli/basic b17(h/text processing/paste.md",
+    "cli/basic b17(h/text processing/cut.md",
+    "cli/basic b17(h/text processing/awk.md",
+    "cli/basic b17(h/find.md",
+    "cli/basic b17(h/ln.md",
+    "cli/basic b17(h/tar.md",
+    "cli/basic b17(h/tree.md",
+    "cli/basic b17(h/whereis, which, type.md",
+    "cli/basic b17(h/xclip.md",
+    "cli/connection/ssh.md",
+    "cli/system info.md",
     "R/usefull.md",
-    "bioinformatics/genomics file formats.md",
-    "bioinformatics/nomencalture.md",
-    "bioinformatics/to do.md",
-    "R/R_data_structures.md",
-    "R/R_basics.md",
-    "bioinformatics/unsorted.md",
+    "cli/connection/scan/traceroute.md",
+    "cli/connection/scan/tcpdump.md",
+    "cli/connection/scan/nmap.md",
+    "cli/connection/scan/hping3.md",
+    "cli/connection/scan/dig.md",
+    "cli/connection/img/remote_forward.png",
+    "cli/connection/img/local_forward.png",
+    "cli/connection/telnet.md",
+    "cli/connection/xfreerdp.md",
+    "cli/connection/wget.md",
+    "cli/connection/scan",
+    "cli/connection/rsync.md",
+    "cli/connection/ngrok.md",
+    "cli/connection/ncat.md",
+    "cli/connection/nc.md",
+    "cli/connection/img",
+    "cli/connection",
+    "cli/basic b17(h/text processing",
+    "cli/basic b17(h",
+    "cli",
     "bioinformatics"
   ]
 }
