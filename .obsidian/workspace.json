@@ -25,14 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes.md",
+                "file": "bioinformatics/nanopolish.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a2598ad5ba41820d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "bioinformatics/remora.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes.md",
+                "file": "bioinformatics/remora.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes.md",
+                "file": "bioinformatics/remora.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes.md"
+                "file": "bioinformatics/remora.md"
               }
             }
           }
@@ -159,20 +171,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0ecc561895c51a93",
+  "active": "a2598ad5ba41820d",
   "lastOpenFiles": [
+    "bioinformatics/nanopolish.md",
+    "bioinformatics/file formats.md",
+    "bioinformatics/remora.md",
     "bioinformatics/to do.md",
-    "bioinformatics/nomencalture.md",
-    "bioinformatics/nanopolish for methylation.md",
     "bioinformatics/NGS.md",
-    "R/usefull.md",
-    "bioinformatics/genomics file formats.md",
     "R/R_basics.md",
     "R/R_data_structures.md",
     "R/renv.md",
+    "R/usefull.md",
+    "notes.md",
+    "bioinformatics/nomencalture.md",
     "cli/basic b17(h/tar.md",
     "README.md",
-    "notes.md",
     "cli/basic b17(h/text processing/tr.md",
     "cli/basic b17(h/text processing/sed.md",
     "cli/basic b17(h/text processing/paste.md",
@@ -186,7 +199,6 @@
     "cli/connection/ssh.md",
     "cli/system info.md",
     "cli/connection/scan/traceroute.md",
-    "cli/connection/scan/tcpdump.md",
     "cli/connection/img/remote_forward.png",
     "cli/connection/img/local_forward.png",
     "cli/connection/scan",

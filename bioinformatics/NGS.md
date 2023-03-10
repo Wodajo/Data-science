@@ -6,12 +6,5 @@ epigenetics - how?
 
 
 
-## STEP BY STEP PROCESSES:
-
-### illumina
-DNA -> fragments -> assembly due to reference
-flow cell
-
-explain step-by-step how illumina and nanopore works
-
 ### nanopore
+(place for step-by-step info)
