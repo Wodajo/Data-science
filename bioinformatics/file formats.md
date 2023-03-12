@@ -15,10 +15,10 @@ CCCCAATGCATGCTTATTGGCAATCCGTCTCC...  # sequence
 FFFFFFFFFFF:FF:FFFFFFFFFFF:FFFFFFFF  # quality score of each base in sequence
 ```
 
-mapping aka alignment - checking where reads (fastq) best match on reference genome (fasta)
+mapping/alignment - checking where reads (fastq) best match on reference genome (fasta)
 	are there variations like insertions/deletions? etc.
 
-bam - store info about how well reads match reference
+bam - store info about how well reads match reference (alignment file)
 	binary - you need `samtools view`
 	compressed version of sam file
 	i.a. name of read, chromosome, position, mapping quality
@@ -42,4 +42,6 @@ typical workflow:
 
 
 
-T2T genome
+`CIGAR` (Concise Idiosyncratic Gapped Alignment Report) string - compressed representation of an alignment in `SAM` files
+	A CIGAR string is made up of <integer><op> pairs, e.g. 76H130M. Here, "op" is an operation specified as a single character, usually an upper-case letter (see table below). An operation is usually a type of column that appears in the alignment, e.g. a match or gap. The integer specifies a number of consecutive operations. In some CIGAR variants, the integer may be omitted if it is 1
+	ops e.g. "M" (match), "D" (deletion), "I" (insertion), "X" mismatch

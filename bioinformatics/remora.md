@@ -8,9 +8,6 @@ bam (with basecalls from pod5) - must contain the `move table` - default in Boni
 
 
 
-
-
-
 alignment - checking where reads (fastq) best match on reference
 bam - store info about how well reads match reference
 pod5 - store signal data (good for methylation basecalling)
