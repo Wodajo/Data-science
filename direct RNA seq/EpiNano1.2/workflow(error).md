@@ -24,7 +24,7 @@ Required Arguments:
                         produced file is already given```
 e.g.
 	`python $EPINANO_HOME/Epinano_Variants.py -n 6 -R reference.fasta -b sample.reads.bam -s  $EPINANO_HOME/misc/sam2tsv.jar --type t`
-	`-R` reference (genome? transcriptome? which for what?)
+	`-R` reference (genome? transcriptome? which for what?) - `samtools faidx` indexed reference file with `sequence dictionary` created using picard `CreateSequenceDictionary` !!!!
 	`-b` BAM (is it prepared ok? make copies with different options and check results)
 	`-s` path to sam2tsv
 	`-T` or `--type` - reference type (g)nome or (t)ranscryptome
