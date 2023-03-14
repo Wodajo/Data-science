@@ -1,4 +1,4 @@
-for methylation calling
+for methylation calling (only dna models pretrained:/)
 
 you can train `remora` module OR use pretrained
 

@@ -109,6 +109,30 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "direct RNA seq/EpiNano1.2/EpiNano-Error.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d62edebc0a247b88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "bioinformatics/nanopolish.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d99f36444d254dbf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "bioinformatics/struggling to make it work.md",
                 "mode": "source",
                 "source": false
@@ -116,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -243,35 +267,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "99e740494f28441c",
+  "active": "d99f36444d254dbf",
   "lastOpenFiles": [
-    "direct RNA seq/EpiNano1.2/EpiNano-SVM.md",
+    "bioinformatics/docker.md",
+    "bioinformatics/dorado.md",
     "bioinformatics/struggling to make it work.md",
+    "bioinformatics/1.1 testing.md",
+    "bioinformatics/file formats.md",
+    "notes.md",
+    "bioinformatics/remora.md",
+    "bioinformatics/nanopolish.md",
+    "direct RNA seq/EpiNano1.2/nanoRMS.md",
+    "direct RNA seq/EpiNano1.2/EpiNano-Error.md",
+    "direct RNA seq/EpiNano1.2/EpiNano-SVM.md",
     "bioinformatics/to do.md",
     "bioinformatics/1. general workflow.md",
-    "bioinformatics/1.1 testing.md",
     "direct RNA seq/EpiNano1.2/workflow(error).md",
     "direct RNA seq",
-    "bioinformatics/docker.md",
-    "direct RNA seq/EpiNano1.2/EpiNano-Error.md",
     "bioinformatics/nomencalture.md",
-    "bioinformatics/file formats.md",
     "direct RNA seq/EpiNano1.2/basics.md",
     "bioinformatics/EpiNano1.2/training SVM.md",
     "direct RNA seq/EpiNano1.2/Epinano_Plot.md",
     "direct RNA seq/EpiNano1.2",
-    "bioinformatics/nanopolish.md",
     "bioinformatics/NGS.md",
-    "bioinformatics/remora.md",
     "R/R_basics.md",
     "R/R_data_structures.md",
     "R/renv.md",
     "R/usefull.md",
-    "notes.md",
     "cli/basic b17(h/tar.md",
     "README.md",
     "cli/basic b17(h/text processing/tr.md",
-    "cli/basic b17(h/text processing/sed.md",
     "cli/connection/img/remote_forward.png",
     "cli/connection/img/local_forward.png",
     "cli/connection/scan",

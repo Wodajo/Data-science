@@ -1,0 +1,1 @@
+very cool basecaller for Oxford Nanopore reads (only dna models pretrained:/)
