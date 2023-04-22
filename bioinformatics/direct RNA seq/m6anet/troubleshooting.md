@@ -15,7 +15,7 @@ czy problem z pamiecia na rootcie byl taki sam jak na big data? -> ten na roocie
 7. what tech for NAS? (nfs for now)
 
 
-`docker run -it --rm -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none ca64a695154d bash`
+`docker run -it --rm --name covid1 -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none ca64a695154d bash`
 
 `cd nanopolish`
 
@@ -40,6 +40,7 @@ APPEND `--rm` - otherwise it get's messy (in `docker ps -a`) fast
 
 `-u $(whoami)` - append this flag for easy management of permissions
 	won't work e.g. in case of opening privileged port
+`docker rename old_name new_name`
 
 by default containers limited only by kernel scheduler:
 ```
@@ -90,10 +91,28 @@ b07ad26795d9   sleepy_boyd       0.00%     2.949MiB / 440.8GiB   0.00%     1.78M
 ```
 
 
-./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid1/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt;\
-\
-./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid2/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt;\
-\
-./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient11/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt;\
-\
+./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid1/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt
+
+./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid2/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt
+
+./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient11/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt
+
 ./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt
+
+
+- ok. 10% na ubiciu jednego
+- docker stats:
+	-t 35 -> 36 PIDS
+	-t 100 -> 101 PIDS
+	ALE oba ok 200%CPU
+wyglada na to, ze to wina bibloteki HDF5 (z 1998r.) -inefficient data reading
+![fast5 sobatge via hdf5 library?](./slow5.png)
+[source](https://assets.researchsquare.com/files/rs-668517/v1_covered.pdf?c=1663272977)
+
+
+- check [f5c](https://github.com/hasindu2008/f5c) for eventalign results (similar to nanopore? usefull for methylation with `m6anet`? better cpu usage?)
+
+### f5c tests
+start them when dorado is finished
+[f5c](https://github.com/hasindu2008/f5c)
+[fast5<->slow5](https://hasindu2008.github.io/slow5tools/)
