@@ -19,7 +19,10 @@ done
 
 
 ### Docker Engine installation
+
 `sudo pacman -S docker`
+`sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+
 `sudo systemctl enable docker`
 `sudo docker info` - check if  you can connect with daemon
 	(sometimes vpn&docker networks overlay - start without vpn)
@@ -46,7 +49,8 @@ done
 `docker rm -f docker_ID` - stop&remove container with one command
 
 `docker start docker_ID`
-`docker exec -it docker_ID bash`
+`docker exec -it docker_ID bash` - interactive mode bash
+	This is $#@$# wierd
 
 `docker images` - list available images
 
@@ -59,7 +63,7 @@ done
 if you want to move them:
 1.  stop `docker.daemon` (will stop all containers!) -> unmount images
 2. move image to prefered dst.
-3. configure `data-root` in `/etc/docker/daemon.json`:
+3. configure `data-root` in `/etc/docker/daemon.json`:   - or CREATE
 ```
 {
   "data-root": "/mnt/docker"

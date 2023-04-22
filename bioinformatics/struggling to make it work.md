@@ -6,17 +6,13 @@ what not ok?
 	- .fa/.fai/.bam/.bai/.dict
 	- dependency (not installed? wrong version? e.g. java)
 
-1. lear how to get into docker container
-	while inside:
-		- check if `Epinano_Variants.dev.py` works (install dependecies ofc)
-		- `pip list` (check if correct versions&eveything)
-			if neccessary `pip3 install -r requirements.txt`
-			python3.6.8 pysam0.18.0
-		- does `samtools view -h -F 3860 read.bam | java -jar sam2tsv` output make sense?
-2. try to correct `Epinano_Variants.py` code (ideas below)
-3. basecall with `Gruppy 3.1.5` ->  `EpiNano-SVM`
-4. [novoalab best practices](https://github.com/novoalab/Best_Practices_dRNAseq_analysis) (for `dRNA`)
-
+1. try the `Epinano_Variants.py` & `Epinano_Variants.dev.py` with cDNA `ref.fa`
+2. check java in container !!!!!!
+3. [m6anet](https://m6anet.readthedocs.io/en/latest/installation.html#installation-from-our-github-repository)
+4. try to correct `Epinano_Variants.py`/`Epinano_VAriants.dev.py` code (ideas below)
+5. basecall with `Gruppy 3.1.5` ->  `EpiNano-SVM`
+6. 
+7. [novoalab best practices](https://github.com/novoalab/Best_Practices_dRNAseq_analysis) (for `dRNA`)
 
 
 
@@ -49,10 +45,12 @@ Traceback (most recent call last):
     raise self._value
 FileNotFoundError: [Errno 2] No such file or directory: '/Workspace/align/data/reads_noF_noq.tmp//Workspace/align/data/reads_noF_noq.fwd.4.per.site.csv'
 ```
-`/Workspace/align/data/reads_noF_noq.tmp/` exist -.-
-`/Workspace/align/data/reads_noF_noq.fwd.4.per.site.csv'` don't
+`/Workspace/align/data/reads_noF_noq.tmp/` exist
+`/Workspace/align/data/reads_noF_noq.fwd.4.per.site.csv'` don't -.-
 
-`docker exec -it docker_ID bash`
+
+
+`docker exec -it docker_ID bash`    OR     `sudo docker run -it docker_name bash`
 `python3 /Workspace/EpiNano/Epinano_Variants.dev.py -r /Workspace/align/data/ref.fa -b /Workspace/align/data/reads_noF_noq.bam -c 3`
 ```python
 multiprocessing.pool.RemoteTraceback:
@@ -82,12 +80,12 @@ Traceback (most recent call last):
     raise self._value
 FileNotFoundError: [Errno 2] No such file or directory: '/Workspace/align/data/reads_noF_noq.tmp//Workspace/align/data/reads_noF_noq.fwd.4.per.site.csv'
 ```
+(doe
+s `samtools view -h -F 3860 read.bam | java -jar sam2tsv` output make sense?)
 
 
-# **The input BAM file may not have any reads mapped to the reference sequence(s) specified.**
 
-
-
+# cDNA as ref.fa !!!!
 
 
 
@@ -130,3 +128,19 @@ if not df.empty:
 def has_reads_mapped(bam)
 	return int(pysam.flagstat(bam).split('\n')[1][0]) > 0
 ```
+
+
+
+
+`mv FAU81678_pass_351f87f2_0.fastq.gz reads.fq.gz`
+`mv Homo_sapiens.GRCh38.cdna.all.fa.gz ref.fa.gz`
+`gzip -d ref.fa.gz` (for `samtools faidx` sake)
+`samtools faidx ref.fa`
+
+`minimap2 -a -L --split-prefix=tmp ref.fa reads.fq.gz | samtools view -bh | samtools sort -O bam > reads.bam`
+`samtools index reads.bam`
+
+
+
+
+`sudo docker run -it --name epivar -v "$PWD/":/project/ epi12 python3 /usr/local/bin/EpiNano/Epinano_Variants.py -R /project/ref.fa -b /project/reads.bam -s /usr/local/bin/EpiNano/misc/sam2tsv.jar -n 10`
