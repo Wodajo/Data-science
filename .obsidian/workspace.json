@@ -32,19 +32,55 @@
             }
           },
           {
-            "id": "b6a4ccb31de4b2b7",
+            "id": "738cac8be25e2360",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cli/connection/ssh.md",
+                "file": "bioinformatics/docker.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4ac14443f7f9d689",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cli/connection/rsync.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3b13c6c9155c149f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "unix_theory/storage management/4. mounting partitions.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "64138c3f5fc928bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "general use commands.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
+                "file": "cli/connection/rsync.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
+                "file": "cli/connection/rsync.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md"
+                "file": "cli/connection/rsync.md"
               }
             }
           }
@@ -171,15 +207,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "78461ede8a70f3ed",
+  "active": "4ac14443f7f9d689",
   "lastOpenFiles": [
+    "unix_theory/storage management/4. mounting partitions.md",
+    "cli/connection/rsync.md",
+    "general use commands.md",
+    "unix_theory/basic info.md",
+    "unix_theory/storage management/3. file system.md",
+    "unix_theory/storage management/2. partitioning.md",
+    "unix_theory/storage management/1. storage devices.md",
+    "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
+    "bioinformatics/docker.md",
+    "cli/connection/ssh.md",
     "bioinformatics/direct RNA seq/m6anet/slow5.png",
     "bioinformatics/direct RNA seq/m6anet/workflow.md",
-    "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
     "tools/programming/bash scripting.md",
-    "cli/connection/ssh.md",
     "pre_process.sh",
-    "cli/connection/rsync.md",
     "cli/connection/wget.md",
     "cli/connection/curl.md",
     "notes.md",
@@ -187,7 +230,6 @@
     "cli/basic b17(h/parallel.md",
     "bioinformatics/file formats.md",
     "bioinformatics/struggling to make it work.md",
-    "bioinformatics/docker.md",
     "bioinformatics/dorado.md",
     "bioinformatics/1.1 testing.md",
     "bioinformatics/remora.md",
@@ -195,12 +237,7 @@
     "direct RNA seq/EpiNano1.2/nanoRMS.md",
     "direct RNA seq/EpiNano1.2/EpiNano-Error.md",
     "direct RNA seq/EpiNano1.2/EpiNano-SVM.md",
-    "bioinformatics/to do.md",
-    "bioinformatics/1. general workflow.md",
-    "direct RNA seq/EpiNano1.2/workflow(error).md",
     "direct RNA seq",
-    "bioinformatics/nomencalture.md",
-    "direct RNA seq/EpiNano1.2/basics.md",
     "direct RNA seq/EpiNano1.2",
     "cli/connection/img/remote_forward.png",
     "cli/connection/img/local_forward.png",

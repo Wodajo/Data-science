@@ -104,7 +104,7 @@ b07ad26795d9   sleepy_boyd       0.00%     2.949MiB / 440.8GiB   0.00%     1.78M
 - docker stats:
 	-t 35 -> 36 PIDS
 	-t 100 -> 101 PIDS
-	ALE oba ok 200%CPU
+	ALE oba ok 200%CPU + 200%containerd-shim (10% z 40cpu)
 wyglada na to, ze to wina bibloteki HDF5 (z 1998r.) -inefficient data reading
 ![fast5 sobatge via hdf5 library?](./slow5.png)
 [source](https://assets.researchsquare.com/files/rs-668517/v1_covered.pdf?c=1663272977)
