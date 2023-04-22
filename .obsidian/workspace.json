@@ -173,6 +173,7 @@
   },
   "active": "b6a4ccb31de4b2b7",
   "lastOpenFiles": [
+    "pre_process.sh",
     "cli/connection/rsync.md",
     "cli/connection/ssh.md",
     "cli/connection/wget.md",
@@ -199,7 +200,6 @@
     "bioinformatics/nomencalture.md",
     "direct RNA seq/EpiNano1.2/basics.md",
     "bioinformatics/EpiNano1.2/training SVM.md",
-    "direct RNA seq/EpiNano1.2/Epinano_Plot.md",
     "direct RNA seq/EpiNano1.2",
     "cli/connection/img/remote_forward.png",
     "cli/connection/img/local_forward.png",
