@@ -44,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cli/connection/ssh.md",
+                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cli/connection/ssh.md",
+                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cli/connection/ssh.md"
+                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md"
               }
             }
           }
@@ -171,15 +171,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b6a4ccb31de4b2b7",
+  "active": "78461ede8a70f3ed",
   "lastOpenFiles": [
+    "bioinformatics/direct RNA seq/m6anet/workflow.md",
+    "tools/programming/bash scripting.md",
+    "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
+    "cli/connection/ssh.md",
     "pre_process.sh",
     "cli/connection/rsync.md",
-    "cli/connection/ssh.md",
     "cli/connection/wget.md",
     "cli/connection/curl.md",
-    "bioinformatics/direct RNA seq/m6anet/workflow.md",
-    "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
     "notes.md",
     "bioinformatics/direct RNA seq/m6anet/installation.md",
     "cli/basic b17(h/parallel.md",

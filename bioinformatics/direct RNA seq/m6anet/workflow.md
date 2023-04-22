@@ -18,7 +18,7 @@ minimap2 -ax map-ont -L --split-prefix=tmp ../ref.fa.gz covid2.fq.gz | samtools 
 __would be cool to run this from the same docker as eventalign (*not checked!*)__
 
 
-`docker run -it -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński ca64a695154d bash`
+`docker run -it --rm -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none ca64a695154d bash`
 	(**mount pwd as the real pwd**)
 
 `./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzy\305\204ski/patient11/patient11.fq --bam /media/twardovsky/sda/Mateusz_Kurzy\305\204ski/patient11/patient11.bam --genome /media/twardovsky/sda/Mateusz_Kurzy\305\204ski/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzy\305\204ski/patient11/final_summary.txt > /media/twardovsky/sda/Mateusz_Kurzy\305\204ski/patient11/eventalign.txt`
