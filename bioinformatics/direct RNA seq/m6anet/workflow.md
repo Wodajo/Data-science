@@ -1,24 +1,21 @@
+`samtools faidx ref.fa` - raz, dla wszystkich
+
+
 `minimap2 -ax map-ont -L --split-prefix=tmp ../ref.fa covid1.fq.gz | samtools view -bh | samtools sort -O bam > covid1.bam`
 
 `samtools index covid1.bam`
-
-`samtools faidx ref.fa` - raz, dla wszystkich
-
 
 to samo tylko oneliner:
 ```
 minimap2 -ax map-ont -L --split-prefix=tmp ../ref.fa.gz covid2.fq.gz | samtools view -bh | samtools sort -O bam > covid2.bam; samtools index covid2.bam
 ```
 
+
 `gzip -d covid1.fq.gz` - na potrzeby nanopolish index
 
 `./nanopolish index -d /media/twardovsky/sda/Mateusz_Kurzyński/covid1/fast5_pass -d /media/twardovsky/sda/Mateusz_Kurzyński/covid1/fast5_fail /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq`
-	check it
-	wee certainly need it.
-	IT WORKS
-	BUT - reads db is mapped to fast5 location - it MUST have the same path in the docker
-		
-	would be cool to run this from the same docker as eventalign (**not checked!**)
+	reads db is mapped to fast5 location - it MUST have the same path in the docker
+__would be cool to run this from the same docker as eventalign (*not checked!*)__
 
 
 `docker run -it -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński ca64a695154d bash`

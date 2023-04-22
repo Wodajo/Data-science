@@ -8,139 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1ba7db89deb219bc",
+            "id": "ffb48add2a4c84d1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "direct RNA seq/EpiNano1.2/basics.md",
+                "file": "bioinformatics/direct RNA seq/m6anet/workflow.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "bb4ca488dd3d6597",
+            "id": "78461ede8a70f3ed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "direct RNA seq/EpiNano1.2/basics.md",
+                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "efb97e483f7f751d",
+            "id": "b6a4ccb31de4b2b7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "direct RNA seq/EpiNano1.2/EpiNano-Error.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5ca945ae83a5bc9f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "direct RNA seq/EpiNano1.2/basics.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "47c7c2b6441ba133",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/file formats.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0bbf202d3cd4ca72",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/1. general workflow.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "af8bfa369e55fa71",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/1.1 testing.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "15b9a8a26d3c850a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/1. general workflow.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "99e740494f28441c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "direct RNA seq/EpiNano1.2/EpiNano-Error.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d62edebc0a247b88",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/nanopolish.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d99f36444d254dbf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/struggling to make it work.md",
+                "file": "cli/connection/ssh.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -206,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "bioinformatics/struggling to make it work.md",
+                "file": "cli/connection/ssh.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -223,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "bioinformatics/struggling to make it work.md",
+                "file": "cli/connection/ssh.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -246,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bioinformatics/struggling to make it work.md"
+                "file": "cli/connection/ssh.md"
               }
             }
           }
@@ -267,14 +171,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d99f36444d254dbf",
+  "active": "b6a4ccb31de4b2b7",
   "lastOpenFiles": [
+    "cli/connection/rsync.md",
+    "cli/connection/ssh.md",
+    "cli/connection/wget.md",
+    "cli/connection/curl.md",
+    "bioinformatics/direct RNA seq/m6anet/workflow.md",
+    "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
+    "notes.md",
+    "bioinformatics/direct RNA seq/m6anet/installation.md",
+    "cli/basic b17(h/parallel.md",
+    "bioinformatics/file formats.md",
+    "bioinformatics/struggling to make it work.md",
     "bioinformatics/docker.md",
     "bioinformatics/dorado.md",
-    "bioinformatics/struggling to make it work.md",
     "bioinformatics/1.1 testing.md",
-    "bioinformatics/file formats.md",
-    "notes.md",
     "bioinformatics/remora.md",
     "bioinformatics/nanopolish.md",
     "direct RNA seq/EpiNano1.2/nanoRMS.md",
@@ -289,14 +201,6 @@
     "bioinformatics/EpiNano1.2/training SVM.md",
     "direct RNA seq/EpiNano1.2/Epinano_Plot.md",
     "direct RNA seq/EpiNano1.2",
-    "bioinformatics/NGS.md",
-    "R/R_basics.md",
-    "R/R_data_structures.md",
-    "R/renv.md",
-    "R/usefull.md",
-    "cli/basic b17(h/tar.md",
-    "README.md",
-    "cli/basic b17(h/text processing/tr.md",
     "cli/connection/img/remote_forward.png",
     "cli/connection/img/local_forward.png",
     "cli/connection/scan",
