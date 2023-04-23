@@ -183,8 +183,7 @@ move fast5_fail to pass
 
 nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq;\
 nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq;\
-nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/covid1.fq
-
+nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq
 
 
 nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid1/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt;\
@@ -193,6 +192,7 @@ nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.f
 \
 nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient11/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt
 
+sukces^^
 
 
 
@@ -216,3 +216,14 @@ f5c meth-freq -i chr22_meth_example/result.tsv > chr22_meth_example/freq.tsv
 #event alignment
 f5c eventalign --slow5 chr22_meth_example/signals.blow5 -b chr22_meth_example/reads.sorted.bam -g chr22_meth_example/humangenome.fa -r chr22_meth_example/reads.fastq > chr22_meth_example/events.tsv
 ```
+
+
+
+### m6anet
+
+docker run -it --rm --name m6anet -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none bfdf303a5403 bash
+
+m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid1/m6anet_dataprep --n_processes 35;\
+m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid2/m6anet_dataprep --n_processes 35;\
+m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient11/m6anet_dataprep --n_processes 35;\
+m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient14/m6anet_dataprep --n_processes 35
