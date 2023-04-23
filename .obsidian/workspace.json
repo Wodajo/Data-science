@@ -80,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cli/connection/rsync.md",
+                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cli/connection/rsync.md",
+                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cli/connection/rsync.md"
+                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md"
               }
             }
           }
@@ -207,20 +207,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4ac14443f7f9d689",
+  "active": "78461ede8a70f3ed",
   "lastOpenFiles": [
-    "unix_theory/storage management/4. mounting partitions.md",
+    "bioinformatics/docker.md",
+    "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
+    "bioinformatics/direct RNA seq/m6anet/workflow.md",
+    "cli/system info.md",
     "cli/connection/rsync.md",
+    "unix_theory/storage management/4. mounting partitions.md",
     "general use commands.md",
     "unix_theory/basic info.md",
     "unix_theory/storage management/3. file system.md",
     "unix_theory/storage management/2. partitioning.md",
     "unix_theory/storage management/1. storage devices.md",
-    "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
-    "bioinformatics/docker.md",
     "cli/connection/ssh.md",
     "bioinformatics/direct RNA seq/m6anet/slow5.png",
-    "bioinformatics/direct RNA seq/m6anet/workflow.md",
     "tools/programming/bash scripting.md",
     "pre_process.sh",
     "cli/connection/wget.md",
@@ -236,7 +237,6 @@
     "bioinformatics/nanopolish.md",
     "direct RNA seq/EpiNano1.2/nanoRMS.md",
     "direct RNA seq/EpiNano1.2/EpiNano-Error.md",
-    "direct RNA seq/EpiNano1.2/EpiNano-SVM.md",
     "direct RNA seq",
     "direct RNA seq/EpiNano1.2",
     "cli/connection/img/remote_forward.png",

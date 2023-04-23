@@ -73,8 +73,6 @@ events 27471, 27472, 27473
 	- expected distribution N(51.68,0.732) -> not really accurate match
 
 
-- Zainstaluj GPU [nvidia drivers](https://www.nvidia.com/Download/index.aspx), [nvidia runtime](https://nvidia.github.io/nvidia-container-runtime/)   ~~(GeForce GTX 750 Ti)~~
-- OGARNIJ TMUXa !!
 
 
 
@@ -97,7 +95,7 @@ b07ad26795d9   sleepy_boyd       0.00%     2.949MiB / 440.8GiB   0.00%     1.78M
 
 ./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient11/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt
 
-./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 35 > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt
+./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 15 > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt
 
 
 - ok. 10% na ubiciu jednego
@@ -110,9 +108,77 @@ wyglada na to, ze to wina bibloteki HDF5 (z 1998r.) -inefficient data reading
 [source](https://assets.researchsquare.com/files/rs-668517/v1_covered.pdf?c=1663272977)
 
 
+
+
 - check [f5c](https://github.com/hasindu2008/f5c) for eventalign results (similar to nanopore? usefull for methylation with `m6anet`? better cpu usage?)
 
-### f5c tests
-start them when dorado is finished
+
+
+### ideas for better future
+- Zainstaluj GPU [nvidia drivers](https://www.nvidia.com/Download/index.aspx), [nvidia runtime](https://nvidia.github.io/nvidia-container-runtime/)   ~~(GeForce GTX 750 Ti)~~
+- TMUX
+
+
+start tests when dorado is finished
 [f5c](https://github.com/hasindu2008/f5c)
 [fast5<->slow5](https://hasindu2008.github.io/slow5tools/)
+
+patient14 as a guinea pig.
+1. nanopolish with `--slow5` option, the subsequent commands like eventalign will use the corresponding `blow5` file you gave as input to the nanopolish index - APPEND with `touch endmark.txt` for estimation of execution time
+2. `f5c` with the same configs as above + GPU (after dorado finish)
+
+
+
+#### converting fast5->slow5
+
+`docker run -it --rm --name slow5tools -v "$PWD":/patient14 --log-driver none slow5tools bash`
+`./scripts/install-vbz.sh` - install plugin for `hdf5` `VBS` compression
+`export HDF5_PLUGIN_PATH=/root/.local/hdf5/lib/plugin` - export plugin to path
+	**(add this 2 to Dockerfile and make a better Docker image)**
+`./slow5tools f2s /patient14/fast5_pass/ -d /patient14/blow5_dir -p 10`
+	`BLOW5` files (default compression: zlib+svb-zd)
+	`-p` nr of I/O processes
+
+`./slow5tools merge /patient14/blow5_dir -o /patient14/signals.blow5 -t15`
+	merge into one file
+	`-t` 8 threads
+
+`./nanopolish index /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5`
+	rest of the nanopolish commands should work without any special options
+
+
+`./nanopolish eventalign --reads /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam --genome /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 15 > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt` -> NOT faster :<
+
+
+#### f5c
+install through `docker` don't have official support of GPU
+if I manage to make it work - I will help them:D
+
+`docker run -it --rm --name f5c_patient14 -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none f5c bash`
+
+./f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq -b /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam --rna /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 15 > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt
+	problem with "ń" via ssh
+
+f5c eventalign --slow5 chr22_meth_example/reads.blow5 -b chr22_meth_example/reads.sorted.bam -g chr22_meth_example/humangenome.fa -r chr22_meth_example/reads.fastq > chr22_meth_example/events.tsv
+
+
+from doc:
+``` shell
+###### Using FAST5 as input ######
+
+#index, call methylation and get methylation frequencies
+f5c index -d chr22_meth_example/fast5_files chr22_meth_example/reads.fastq
+f5c call-methylation -b chr22_meth_example/reads.sorted.bam -g chr22_meth_example/humangenome.fa -r chr22_meth_example/reads.fastq > chr22_meth_example/result.tsv
+f5c meth-freq -i chr22_meth_example/result.tsv > chr22_meth_example/freq.tsv
+#event alignment
+f5c eventalign -b chr22_meth_example/reads.sorted.bam -g chr22_meth_example/humangenome.fa -r chr22_meth_example/reads.fastq > chr22_meth_example/events.tsv
+
+###### Using SLOW5 as input ######
+
+#index, call methylation and get methylation frequencies
+f5c index --slow5 chr22_meth_example/reads.blow5 chr22_meth_example/reads.fastq
+f5c call-methylation --slow5 chr22_meth_example/reads.blow5 -b chr22_meth_example/reads.sorted.bam -g chr22_meth_example/humangenome.fa -r chr22_meth_example/reads.fastq > chr22_meth_example/result.tsv
+f5c meth-freq -i chr22_meth_example/result.tsv > chr22_meth_example/freq.tsv
+#event alignment
+f5c eventalign --slow5 chr22_meth_example/signals.blow5 -b chr22_meth_example/reads.sorted.bam -g chr22_meth_example/humangenome.fa -r chr22_meth_example/reads.fastq > chr22_meth_example/events.tsv
+```
