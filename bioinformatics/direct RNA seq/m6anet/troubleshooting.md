@@ -131,6 +131,7 @@ patient14 as a guinea pig.
 
 #### converting fast5->slow5
 
+move fast5_fail to fast5_pass
 `docker run -it --rm --name slow5tools -v "$PWD":/patient14 --log-driver none slow5tools bash`
 `./scripts/install-vbz.sh` - install plugin for `hdf5` `VBS` compression
 `export HDF5_PLUGIN_PATH=/root/.local/hdf5/lib/plugin` - export plugin to path
@@ -154,12 +155,45 @@ patient14 as a guinea pig.
 install through `docker` don't have official support of GPU
 if I manage to make it work - I will help them:D
 
-`docker run -it --rm --name f5c_patient14 -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none f5c bash`
+~~`docker run -it --rm --name f5c_patient14 -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none f5c bash`~~ - problems with locale (brak "ń")
 
-./f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq -b /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam --rna /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 15 > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt
+`f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq -b /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 15 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt`
 	problem with "ń" via ssh
+	na condzie - śmiga :D `conda create -n f5c -c bioconda -c conda-forge f5c`
+	zuzycie == 15 watkom - geat success:DDD
 
-f5c eventalign --slow5 chr22_meth_example/reads.blow5 -b chr22_meth_example/reads.sorted.bam -g chr22_meth_example/humangenome.fa -r chr22_meth_example/reads.fastq > chr22_meth_example/events.tsv
+- command dump of the rest:
+move fast5_fail to pass
+
+`docker run -it --rm --name slow5tools -v "$PWD":/data --log-driver none slow5tools bash`
+
+`./scripts/install-vbz.sh` - install plugin for `hdf5` `VBS` compression
+`export HDF5_PLUGIN_PATH=/root/.local/hdf5/lib/plugin` - export plugin to path
+	**(add this 2 to Dockerfile and make a better Docker image)**
+
+./slow5tools f2s /data/covid1/fast5_pass/ -d /data/covid1/blow5_dir -p 10;\
+./slow5tools f2s /data/covid2/fast5_pass/ -d /data/covid2/blow5_dir -p 10;\
+./slow5tools f2s /data/patient11/fast5_pass/ -d /data/patient11/blow5_dir -p 10;\
+./slow5tools merge /data/covid1/blow5_dir -o /data/covid1/signals.blow5 -t35;\
+./slow5tools merge /data/covid2/blow5_dir -o /data/covid2/signals.blow5 -t35;\
+./slow5tools merge /data/patient11/blow5_dir -o /data/patient11/signals.blow5 -t35
+
+
+- try to index with f5c index (the same as nanopolish so you don't really have to, but let's check!)
+
+nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq;\
+nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq;\
+nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/covid1.fq
+
+
+
+nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid1/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt;\
+\
+nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid2/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt;\
+\
+nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient11/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt
+
+
 
 
 from doc:
