@@ -227,3 +227,20 @@ m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eve
 m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid2/m6anet_dataprep --n_processes 35;\
 m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient11/m6anet_dataprep --n_processes 35;\
 m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient14/m6anet_dataprep --n_processes 35
+
+
+
+
+conda create -n m6anet2.0.1 -c bioconda -c conda-forge python==3.7.16 
+	nope
+
+<in m6anet container>
+pip install --upgrade pip
+pip install --upgrade m6anet
+	error:/
+
+
+TO DO::
+1. docker history --no-trunc bfdf303a5403
+	write a Dockerfile for new m6anet
+2. try to run dataprep:')
