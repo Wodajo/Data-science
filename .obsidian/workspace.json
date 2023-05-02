@@ -78,6 +78,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e69b08b955b18103",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "general use commands.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
         "currentTab": 1
@@ -209,13 +221,15 @@
   },
   "active": "78461ede8a70f3ed",
   "lastOpenFiles": [
-    "bioinformatics/docker.md",
+    "general use commands.md",
+    "notes.md",
     "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
+    "bioinformatics/direct RNA seq/m6anet/installation.md",
+    "bioinformatics/docker.md",
     "bioinformatics/direct RNA seq/m6anet/workflow.md",
     "cli/system info.md",
     "cli/connection/rsync.md",
     "unix_theory/storage management/4. mounting partitions.md",
-    "general use commands.md",
     "unix_theory/basic info.md",
     "unix_theory/storage management/3. file system.md",
     "unix_theory/storage management/2. partitioning.md",
@@ -226,8 +240,6 @@
     "pre_process.sh",
     "cli/connection/wget.md",
     "cli/connection/curl.md",
-    "notes.md",
-    "bioinformatics/direct RNA seq/m6anet/installation.md",
     "cli/basic b17(h/parallel.md",
     "bioinformatics/file formats.md",
     "bioinformatics/struggling to make it work.md",

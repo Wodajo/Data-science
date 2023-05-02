@@ -181,18 +181,20 @@ move fast5_fail to pass
 
 - try to index with f5c index (the same as nanopolish so you don't really have to, but let's check!)
 
-nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq;\
-nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq;\
-nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq
+nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid1/error_index.txt;\
+nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid2/error_index.txt;\
+nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient11/error_index.txt;\
+nohup f5c index --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient14/error_index.txt
+	works
 
-
-nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid1/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt;\
+nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid1/covid1.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid1/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid1/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid1/error_eventalign.txt;\
 \
-nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid2/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt;\
+nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/covid2/covid2.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/covid2/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/covid2/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid2/error_eventalign.txt;\
 \
-nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient11/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt
-
-sukces^^
+nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient11/patient11.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient11/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient11/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient11/error_eventalign.txt;\
+\
+nohup f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --bam /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 35 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient14/error_eventalign.txt
+	sukces^^
 
 
 
@@ -221,13 +223,15 @@ f5c eventalign --slow5 chr22_meth_example/signals.blow5 -b chr22_meth_example/re
 
 ### m6anet
 
+#### dataprep
+
 docker run -it --rm --name m6anet -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none bfdf303a5403 bash
 
-m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid1/m6anet_dataprep --n_processes 35;\
-m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid2/m6anet_dataprep --n_processes 35;\
-m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient11/m6anet_dataprep --n_processes 35;\
-m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient14/m6anet_dataprep --n_processes 35
-
+nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid1/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid1/error_dataprep;\
+nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid2/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid2/error_dataprep;\
+nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient11/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient11/error_dataprep;\
+nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient14/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient14/error_dataprep
+	przemielilo i chyba jest ok:D
 
 
 
@@ -244,3 +248,103 @@ TO DO::
 1. docker history --no-trunc bfdf303a5403
 	write a Dockerfile for new m6anet
 2. try to run dataprep:')
+
+
+
+##### I managed to install m6anet
+via conda
+If I recall correctly - update conda, install python3.8, use pip3 to install m6anet
+	CAN'T FIND IN HISTORY:<
+
+```
+  File "/home/twardovsky/miniconda3/envs/m6anet2/bin/m6anet", line 8, in <module>
+    sys.exit(main())
+  File "/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/m6anet/__init__.py", line 30, in main
+    args.func(args)
+  File "/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/m6anet/scripts/dataprep.py", line 62, in main
+    parallel_index(args.eventalign, args.chunk_size,
+  File "/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/m6anet/utils/dataprep_utils.py", line 245, in parallel_index
+    for chunk in pd.read_csv(eventalign_filepath, chunksize=chunk_size,sep='\t'):
+  File "/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/pandas/io/parsers.py", line 1128, in __next__
+    return self.get_chunk()
+  File "/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/pandas/io/parsers.py", line 1188, in get_chunk
+    return self.read(nrows=size)
+  File "/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/pandas/io/parsers.py", line 1154, in read
+    ret = self._engine.read(nrows)
+  File "/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/pandas/io/parsers.py", line 2059, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 881, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 908, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 950, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 937, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2132, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 5, saw 15
+```
+check:
+/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/pandas/io/parsers.py
+
+/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/m6anet/utils/dataprep_utils.py
+
+/home/twardovsky/miniconda3/envs/m6anet2/lib/python3.8/site-packages/m6anet/scripts/dataprep.py
+
+
+
+I KNOW !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+It's wrong `nohup` !!!
+```
+If  standard  input  is  a terminal, redirect it from an unreadable file.  If standard output is a terminal, append output to
+       'nohup.out' if possible, '$HOME/nohup.out' otherwise.  
+       
+       If standard error is a terminal, redirect it to standard  output.  <----- !!!1!!!!!1
+```
+I was correct^^
+
+
+#### infering methylations
+
+
+
+
+nohup m6anet inference --input_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid1/m6anet_dataprep --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid1/m6anet_infer  --n_processes 4 --num_iterations 1000 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid1/error_infer.txt
+
+
+
+nohup m6anet inference --input_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid2/m6anet_dataprep --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid2/m6anet_infer  --n_processes 4 --num_iterations 1000 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid2/error_infer.txt;\
+nohup m6anet inference --input_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient11/m6anet_dataprep --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient11/m6anet_infer  --n_processes 4 --num_iterations 1000 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient11/error_infer.txt;\
+nohup m6anet inference --input_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient14/m6anet_dataprep --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient14/m6anet_infer  --n_processes 4 --num_iterations 1000 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient14/error_infer.txt
+	chyba dzialczy
+
+```
+w-r--r-- 1 twardovsky twardovsky  26M May  2 10:18 data.indiv_proba.csv
+-rw-r--r-- 1 twardovsky twardovsky 322K May  2 10:18 data.site_proba.csv
+```
+
+
+
+### further analysis
+
+`data.indiv_proba.csv` - probability of mod for **`each read`**
+	-   `transcript_id`: The transcript id of the predicted position
+	-   `transcript_position`: The transcript position of the predicted position
+	-   `read_index`: The read identifier from nanopolish that corresponds to the actual `read_id` from nanopolish `summary.txt`
+	- ---------------------------
+	-   `probability_modified`: The probability that a given read is modified
+
+
+
+`data.site_proba.csv` - probability of mod at each individual position for **`each transcript`**
+	-   `transcript_id`: The transcript id of the predicted position
+	-   `transcript_position`: The transcript position of the predicted position
+	-   `n_reads`: The number of reads for that particular position 
+	- ---------------------------
+	-   `probability_modified`: The probability that a given site is modified     <---
+		devs recommend a threshold of 0.9 to select m6A sites
+	-   `kmer`: The 5-mer motif of a given site
+	-   `mod_ratio`: The estimated percentage of reads in a given site that is modified
+
+
+
+in covid1_site there is 0.997 probability of k-mer being modified (transcript position 737, infered from 24 reads)
+BUT
+in covid1_site transcript position 737 individual reads gives low probabilities of being modified.
+dosc logiczne ze per read jest mniej pewny niz per kmer, ale czy nadaje sie takie prawddopodobienstwo do publikacji?

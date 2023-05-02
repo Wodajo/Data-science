@@ -28,4 +28,3 @@ I used pull from docker hub
 `docker run -v "$PWD":/data -it carrce/nanopolish /nanopolish/nanopolish eventalign --reads covid_rna1/covid_rna1.fq.gz --bam covid_rna1/covid_rna1.fq.bam --genome Human_reference/human_ref.fa --scale-events --signal-index --summary covid_rna1/final_summary.txt  --threads 40 > OUTPUT_nano_pre_m6anet/eventalign.txt` - segments raw fast5 signals to each position within the transcriptome, allowing m6Anet to predict modification based on the segmented signals
 
 PROBLEM - bash nie daje odpalic komendy, bo porownuje ze swoim srodowiskiem (nie chce zroibic przekierowania sdout do lokalizacji ktora nie istnieje poza kontenerem)
-
