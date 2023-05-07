@@ -1,3 +1,6 @@
+  `vmstat` - info about mem,cpu,io,swap
+`  nohup command 2> error.log`
+
 #### so as to pipe
 ```
  celldweller.xspf

@@ -10,9 +10,9 @@ czy problem z pamiecia na rootcie byl taki sam jak na big data? -> ten na roocie
 
 4. ~~czy eventalign ma prawo byc tak duzy?~~ (+17G - fast5 have ~43G)  `du -h`
 5. ~~create documentation of eventalign output~~
-6. napisz pre-processing script :D
+6. ~~napisz pre-processing script :D~~  - maybe later (not that usefull)
 
-7. what tech for NAS? (nfs for now)
+7. ~~what tech for NAS? (nfs for now)~~ - done with smb :D
 
 
 `docker run -it --rm --name covid1 -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none ca64a695154d bash`
@@ -52,7 +52,7 @@ By default, a container has no resource constraints and can use as much of a giv
 MinION detect events per 5-mers passing through.
 That means 1024 combinations for ~40-70pA range
 - normal distribution of 5-mers overlap BUT solution must respect overlaps between subsequent 5-mers
-`eventalign` - takes in a set of nanopore reads aligned according to base sequence of reference sequence (what read is where in reference) and re-aligns the reads in event space (what read was infered from that signal)
+`eventalign` - nanopolish module (used by `f5c`) takes in a set of nanopore reads aligned according to base sequence of reference sequence (what read is where in reference) and re-aligns the reads in event space (what read was infered from that signal)
 ```
 contig                         position  reference_kmer  read_index  strand  event_index  event_level_mean  event_length  model_kmer  model_mean  model_stdv
 gi|556503834|ref|NC_000913.3|  10000     ATTGC           1           c       27470        50.57             0.022         ATTGC       50.58       1.02
@@ -104,13 +104,13 @@ b07ad26795d9   sleepy_boyd       0.00%     2.949MiB / 440.8GiB   0.00%     1.78M
 	-t 100 -> 101 PIDS
 	ALE oba ok 200%CPU + 200%containerd-shim (10% z 40cpu)
 wyglada na to, ze to wina bibloteki HDF5 (z 1998r.) -inefficient data reading
-![fast5 sobatge via hdf5 library?](./slow5.png)
+![fast5 sobatge via hdf5 library?](slow5.png)
 [source](https://assets.researchsquare.com/files/rs-668517/v1_covered.pdf?c=1663272977)
 
 
 
 
-- check [f5c](https://github.com/hasindu2008/f5c) for eventalign results (similar to nanopore? usefull for methylation with `m6anet`? better cpu usage?)
+- check [f5c](https://github.com/hasindu2008/f5c) for eventalign results  ---> BEST RESULTS, new default
 
 
 
@@ -226,22 +226,13 @@ f5c eventalign --slow5 chr22_meth_example/signals.blow5 -b chr22_meth_example/re
 #### dataprep
 
 docker run -it --rm --name m6anet -v "$PWD":/media/twardovsky/sda/Mateusz_Kurzyński --log-driver none bfdf303a5403 bash
+	old idea
 
 nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid1/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid1/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid1/error_dataprep;\
 nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/covid2/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid2/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid2/error_dataprep;\
 nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient11/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient11/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient11/error_dataprep;\
 nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/patient14/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzyński/patient14/error_dataprep
 	przemielilo i chyba jest ok:D
-
-
-
-conda create -n m6anet2.0.1 -c bioconda -c conda-forge python==3.7.16 
-	nope
-
-<in m6anet container>
-pip install --upgrade pip
-pip install --upgrade m6anet
-	error:/
 
 
 TO DO::
