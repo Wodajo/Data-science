@@ -2,6 +2,7 @@
 
 ###
 `samtools faidx ref.fa` - raz, dla wszystkich
+`cat read.fq.gz`
 `gzip -d` - might be neccessairy for `ref.fa` & `read.fq` (not really checked which tool need and which don't)
 
 `minimap2 -ax map-ont -L --split-prefix=tmp ../ref.fa covid1.fq.gz | samtools view -bh | samtools sort -O bam > covid1.bam`
@@ -71,6 +72,10 @@ events 27471, 27472, 27473
 
 
 ### infering m6a
+
+`nohup m6anet dataprep --eventalign /media/twardovsky/sda/Mateusz_Kurzynski/covid3/eventalign.txt --out_dir /media/twardovsky/sda/Mateusz_Kurzynski/covid3/m6anet_dataprep --n_processes 35 2> /media/twardovsky/sda/Mateusz_Kurzynski/covid3/error_dataprep`
+
+
 `nohup m6anet inference --input_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid1/m6anet_dataprep --out_dir /media/twardovsky/sda/Mateusz_Kurzyński/covid1/m6anet_infer  --n_processes 4 --num_iterations 1000 2> /media/twardovsky/sda/Mateusz_Kurzyński/covid1/error_infer.txt`
 
 

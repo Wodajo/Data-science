@@ -59,3 +59,5 @@ be carefull with gamesxD (it's probably better to just remap nvim keybindings)
 `-x` extract archive. Autodetect compression type
 
 ### 
+
+

@@ -25,3 +25,33 @@ Mozliwe, ze ich wyniki EpiNano sa zanizone, poniewaz uzyto gotowych modeli NIE k
 NanoPolish jest na tej samej linii komorkowej (HEK293T)
 m6anet twierdzi, ze nie ma zasadniczych roznic miedzy basecallerami
 SVM w epinano domaga sie wersji 
+
+
+### pomysly
+
+- **ktore transkrypty zmetylowane w cov/pat?
+	jaka ekspresja?**    <- n_reads
+	jakie szlaki?
+	**ile m6A sites** dla danych transkryptow (3D?)
+
+- **zestaw mod_ratio** dla analogicznych transkryptow cov/pat
+	takze n_reads?
+
+- porownanie sharowanych modyfikacji miedzy cov/pat
+	takie same?
+	ktores sa sharowane przez wszystkie?
+	roznice w mod_ratio?
+
+- udzial genow w og. NIE zmetylowanych?
+
+****
+
+- dlugosc poliA --> też
+- płeć
+
+- patologiczne paths (poza GO/KEGG)
+
+***
+
+metylowane covidy -> ekspresja - illumina (jest) vs nano (flair) wzglednie
+	(porownanie wykresem wygladow `coverage` ORAZ zerowa ekspresja do niezerowej)
