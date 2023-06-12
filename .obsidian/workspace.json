@@ -8,103 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ffb48add2a4c84d1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/direct RNA seq/m6anet/workflow.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "78461ede8a70f3ed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "738cac8be25e2360",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "bioinformatics/docker.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4ac14443f7f9d689",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cli/connection/rsync.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3b13c6c9155c149f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "unix_theory/storage management/4. mounting partitions.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "64138c3f5fc928bf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "general use commands.md",
+                "file": "R/R_basics.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "e69b08b955b18103",
+            "id": "4fb6b623308c5096",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cli/connection/xfreerdp.md",
+                "file": "R/R_data_structures.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "7bb7462157c65a89",
+            "id": "a29868ae0b8f8a86",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cli/connection/x11vnc.md",
+                "file": "R/usefull.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -149,6 +89,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "0c44c8f8eccc4a9d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -170,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cli/connection/x11vnc.md",
+                "file": "R/usefull.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cli/connection/x11vnc.md",
+                "file": "R/usefull.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cli/connection/x11vnc.md"
+                "file": "R/usefull.md"
               }
             }
           }
@@ -231,19 +179,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7bb7462157c65a89",
+  "active": "a29868ae0b8f8a86",
   "lastOpenFiles": [
+    "R/R_basics.md",
+    "R/usefull.md",
+    "R/R_data_structures.md",
+    "R/renv.md",
+    "general use commands.md",
+    "unix_theory/storage management/4. mounting partitions.md",
+    "bioinformatics/docker.md",
+    "cli/connection/rsync.md",
     "cli/connection/xfreerdp.md",
     "cli/connection/x11vnc.md",
-    "general use commands.md",
     "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
     "notes.md",
     "bioinformatics/direct RNA seq/m6anet/installation.md",
-    "bioinformatics/docker.md",
     "bioinformatics/direct RNA seq/m6anet/workflow.md",
     "cli/system info.md",
-    "cli/connection/rsync.md",
-    "unix_theory/storage management/4. mounting partitions.md",
     "unix_theory/basic info.md",
     "unix_theory/storage management/3. file system.md",
     "unix_theory/storage management/2. partitioning.md",
@@ -257,10 +209,6 @@
     "cli/basic b17(h/parallel.md",
     "bioinformatics/file formats.md",
     "bioinformatics/struggling to make it work.md",
-    "bioinformatics/dorado.md",
-    "bioinformatics/1.1 testing.md",
-    "bioinformatics/remora.md",
-    "bioinformatics/nanopolish.md",
     "direct RNA seq",
     "direct RNA seq/EpiNano1.2",
     "cli/connection/img/remote_forward.png",
