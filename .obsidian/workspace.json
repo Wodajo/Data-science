@@ -8,31 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "64138c3f5fc928bf",
+            "id": "dc714e805de25a05",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "R/R_basics.md",
+                "file": "R/notes.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "4fb6b623308c5096",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "R/R_data_structures.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a29868ae0b8f8a86",
+            "id": "76f2211cbedbc856",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -44,7 +32,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -179,12 +167,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a29868ae0b8f8a86",
+  "active": "76f2211cbedbc856",
   "lastOpenFiles": [
-    "R/R_basics.md",
+    "R/notes.md",
     "R/usefull.md",
     "R/R_data_structures.md",
+    "R/R_basics.md",
     "R/renv.md",
+    "bioinformatics/Stringtie.md",
+    "bioinformatics/direct RNA/NanoCount/info.md",
+    "cli/basic b17(h/text processing/sed.md",
+    "bioinformatics/dorado.md",
+    "bioinformatics/file formats.md",
+    "bioinformatics/nanopolish.md",
+    "bioinformatics/NGS.md",
+    "bioinformatics/nomencalture.md",
+    "bioinformatics/remora.md",
+    "bioinformatics/struggling to make it work.md",
+    "bioinformatics/to do.md",
+    "bioinformatics/direct RNA/m6anet/workflow.md",
+    "bioinformatics/direct RNA/m6anet/info.md",
+    "bioinformatics/direct RNA/m6anet/troubleshooting.md",
     "general use commands.md",
     "unix_theory/storage management/4. mounting partitions.md",
     "bioinformatics/docker.md",
@@ -192,23 +195,8 @@
     "cli/connection/xfreerdp.md",
     "cli/connection/x11vnc.md",
     "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
-    "notes.md",
-    "bioinformatics/direct RNA seq/m6anet/installation.md",
-    "bioinformatics/direct RNA seq/m6anet/workflow.md",
-    "cli/system info.md",
-    "unix_theory/basic info.md",
-    "unix_theory/storage management/3. file system.md",
-    "unix_theory/storage management/2. partitioning.md",
-    "unix_theory/storage management/1. storage devices.md",
-    "cli/connection/ssh.md",
     "bioinformatics/direct RNA seq/m6anet/slow5.png",
-    "tools/programming/bash scripting.md",
     "pre_process.sh",
-    "cli/connection/wget.md",
-    "cli/connection/curl.md",
-    "cli/basic b17(h/parallel.md",
-    "bioinformatics/file formats.md",
-    "bioinformatics/struggling to make it work.md",
     "direct RNA seq",
     "direct RNA seq/EpiNano1.2",
     "cli/connection/img/remote_forward.png",

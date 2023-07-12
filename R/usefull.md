@@ -11,14 +11,18 @@ unique(data$death_dummy)  # 0 1  # check ifonly this values are there
 
 `less -S` - turn off line wrapping
 
-
+rows
 ```R
 filter(dst=="NYC")  # keep rows with matching value
-arrange()  # sort rows, by col values. arrange(desc(colname)) for descending
+arrange()  # sort rows, by col values.
+arrange(desc(colname))  # for descending
 distinct()  # unique rows.
 distinct(src, dst) # unique src-dst pairs
 distinct(src, dst, .keep_all=TRUE) # unique src-dst paired rows
 count(src, dst, sort=TRUE)  # all src-dst pairs, sorted by nr. occurence (descending)
+```
+columns
+```R
 mutate(
 	speed = distance/time  # create new col
 	.before = 1  # paste col at beggining
@@ -57,11 +61,11 @@ group_by(month) |>  # output grouped by month
 	slice_sample(n=1)  # random row
 ```
 
-
-EWR, IAH, MIA, LGA
-1. Wszystkie loty z EWR z kwietnia 2013. Od najszybszych do najwolniejszych. Z dodatkową kolumną speed, położoną jako trzecia od lewej.
-2. Scatterplot z regresja liniowa pokazujacy zaleznosc czas - speed, color - carrier.
-3. Wszystkie miasta src i origin, tabela ze zmieniona nazwa column dla src i dst. Dodatkowa kolumna na src i dst BEZ litery A. 
-4. tabela w ktorej pingwiny maja przydzielone wlasne loty w zaleznosci od miesiecy
-5. zgrupuj loty miesiacami. Ocen srednie predkosci w poszczegolnych miesiacach. Nowe columny z najwiekszymi i najmniejszymi predkoscimi danego miesiaca.
-6. 
+change order of levels
+``` R
+fct_inorder(f, ordered = NA)  # order of first appearance
+fct_infreq(f, w = NULL, ordered = NA)  # by nr of obsevations in each lvl
+fct_inseq(f, ordered = NA)  # numeric value of each lvl
+# f - factor
+# w - optional numeric vector giving weights for frequency of each value (not lvl!) in f
+```
