@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "R/usefull.md",
+                "file": "R/notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "R/usefull.md",
+                "file": "R/notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "R/usefull.md"
+                "file": "R/notes.md"
               }
             }
           }
@@ -167,10 +166,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "76f2211cbedbc856",
+  "active": "dc714e805de25a05",
   "lastOpenFiles": [
-    "R/notes.md",
     "R/usefull.md",
+    "R/notes.md",
     "R/R_data_structures.md",
     "R/R_basics.md",
     "R/renv.md",
