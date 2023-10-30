@@ -1,7 +1,7 @@
 ## CURRENT (m6anet 2.0.1)
 
 ###
-`samtools faidx ref.fa` - raz, dla wszystkich
+`samtools faidx ref.fa` - raz, dla wszystkich. ref to transkryptom
 `cat read.fq.gz`
 `gzip -d` - might be neccessairy for `ref.fa` & `read.fq` (not really checked which tool need and which don't)
 
@@ -14,7 +14,15 @@ to samo tylko oneliner:
 minimap2 -ax map-ont -L --split-prefix=tmp ../ref.fa covid2.fq | samtools view -bh | samtools sort -O bam > covid2.bam; samtools index covid2.bam
 ```
 
-### fast5->slow5
+### FAKULTATIVE make transcriptom
+if you don't have one (new species)
+`git clone --recurse-submodules https://github.com/comprna/RATTLE`
+`cd RATTLE`
+`./build.sh`
+`find . -name "*.fq.gz" -exec cat {} + > all.fq.gz`
+`./rattle cluster -i ../../all.fq -t 15 - o ../../ --iso --rna`
+a
+### fast5->slow5`
 move fast5_fail to fast5_pass
 `docker run -it --rm --name slow5tools -v "$PWD":/patient14 --log-driver none slow5tools bash`
 	- `./scripts/install-vbz.sh` - install plugin for `hdf5` `VBS` compression
@@ -37,7 +45,7 @@ move fast5_fail to fast5_pass
 
 `f5c index /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5`
 	reads db is mapped to blow5 location - from now on paths can't be relative
-
+	IMPORTANT - there should only be `blow5`'s in a director with it, bcos otherwise it will generate segmentation fault
 ### eventalign
 `f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq -b /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 15 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt`
 
@@ -97,3 +105,17 @@ events 27471, 27472, 27473
 		devs recommend a threshold of 0.9 to select m6A sites
 	-   `kmer`: The 5-mer motif of a given site
 	-   `mod_ratio`: The estimated percentage of reads in a given site that is modified
+
+
+
+### Lower the 20 reads for each candidate site
+`m6anet/scripts/inference.py` - DEFAULT_MIN_READS is set to 20
+``` inference.py
+
+```
+`m6anet/utils/inference_utils.py` - calculate_site_proba from 20
+``` inference_utils.py
+
+```
+
+Naaah - I've got worse results

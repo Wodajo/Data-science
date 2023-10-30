@@ -4,7 +4,6 @@
 	and maybe more
 
 - do `m6anet` for m6a
-- do `Epinano` for the rest of mods
 
 
 
