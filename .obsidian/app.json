@@ -1,8 +1,5 @@
 {
   "spellcheck": true,
-  "spellcheckLanguages": [
-    "pl",
-    "en-US"
-  ],
+  "spellcheckLanguages": null,
   "newFileLocation": "current"
 }

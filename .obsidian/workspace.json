@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "R/notes.md",
+                "file": "bioinformatics/docker.md",
                 "mode": "source",
                 "source": false
               }
@@ -60,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "docker",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -105,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "R/notes.md",
+                "file": "bioinformatics/docker.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "R/notes.md",
+                "file": "bioinformatics/docker.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "R/notes.md"
+                "file": "bioinformatics/docker.md"
               }
             }
           }
@@ -168,8 +169,10 @@
   },
   "active": "dc714e805de25a05",
   "lastOpenFiles": [
-    "R/usefull.md",
+    "bioinformatics/1.1 testing epinano docker.md",
     "R/notes.md",
+    "notes.md",
+    "R/usefull.md",
     "R/R_data_structures.md",
     "R/R_basics.md",
     "R/renv.md",
@@ -192,8 +195,6 @@
     "bioinformatics/docker.md",
     "cli/connection/rsync.md",
     "cli/connection/xfreerdp.md",
-    "cli/connection/x11vnc.md",
-    "bioinformatics/direct RNA seq/m6anet/troubleshooting.md",
     "bioinformatics/direct RNA seq/m6anet/slow5.png",
     "pre_process.sh",
     "direct RNA seq",
