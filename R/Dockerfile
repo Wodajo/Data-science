@@ -19,13 +19,19 @@ RUN apt update && \
         liblzma-dev \
         libglpk40 \
         libgit2-dev \
-    && apt clean && \
+    && apt clean my room madafaka&& \
     apt purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN Rscript -e "install.packages('pak', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN Rscript -e "pak::pkg_install(renv)"
 #RUN Rscript -e "install.packages('pak', repos = c(CRAN = 'https://cloud.r-project.org'))
+
+# copy user settings
+#COPY --chown=rstudio:rstudio rstudio/rstudio-prefs.json /home/rstudio/.config/rstudio
+# copy .Rprofile info (e.g. .libPaths("/packages/)) 
+#COPY --chown=rstudio:rstudio rstudio/.Rprofile /home/rstudio/
+
 
 WORKDIR /home/rstudio
 

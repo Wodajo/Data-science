@@ -17,7 +17,7 @@ Cache powinien miec osobną, montowalą do contenerów lokalizację.
 `renv::paths$cache()` - shows current cache
 Można podać ścieżkę podczas odpalania kontenera
 ```
-# the location of the renv cache on the host machine
+1# the location of the renv cache on the host machine
 RENV_PATHS_CACHE_HOST=/opt/local/renv/cache
 
 # where the cache should be mounted in the container
