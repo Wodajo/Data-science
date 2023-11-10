@@ -5,9 +5,9 @@ LABEL source="https://github.com/Wodajo/Data-science/R/Dockerfile"
 
 MAINTAINER Wodajo <wodajo@pm.me>
 
-RUN apt update && \
-    apt upgrade -y && \
-    apt install -y \
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y \
         libhdf5-dev \
         libcurl4-gnutls-dev \
         libssl-dev \
@@ -19,8 +19,8 @@ RUN apt update && \
         liblzma-dev \
         libglpk40 \
         libgit2-dev \
-    && apt clean my room madafaka&& \
-    apt purge && \
+    && apt-get clean my room madafaka&& \
+    apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN Rscript -e "install.packages('pak', repos = c(CRAN = 'https://cloud.r-project.org'))"
