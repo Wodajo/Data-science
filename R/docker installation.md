@@ -21,29 +21,11 @@ COPY --chown=rstudio:rstudio rstudio/rstudio-prefs.json /home/rstudio/.config/rs
 ```
 COPY --chown=rstudio:rstudio rstudio/.Rprofile /home/rstudio/
 ```
-przykład (lepiej zamontować pakiety via renv cache -> patrz start header)
+przykład (lepiej zamontować pakiety via renv cache -> patrz "start" header)
 ``` Rprofile
 .libPaths("/packages/")
 ```
 
-
-### new user
-```bash
-# docker ps -a
-docker exec -it rstudio_wodajo /bin/bash
-
-my_user=$1
-# once you are inside the container
-useradd ${my_user}
-
-# enter password when prompted
-passwd ${my_user}
-
-mkdir /home/${my_user}
-chown ${my_user}:${my_user} /home/${my_user}
-
-exit
-```
 
 ### start
 Cache powinien miec osobną, montowalą do contenerów lokalizację.
@@ -79,4 +61,22 @@ or export `RENV_PATHS_CACHE` via `Renviron.site` (R installation's site-wide) du
 # -L Specifies that connections to the given TCP port or Unix socket on the local (client) host are to be forwarded to the given host and port
 
 ssh -N -f -Y -L 8888:localhost:8888 wodajo@192.168.1.42
+```
+
+### new user
+```bash
+# docker ps -a
+docker exec -it rstudio_wodajo /bin/bash
+
+my_user=$1
+# once you are inside the container
+useradd ${my_user}
+
+# enter password when prompted
+passwd ${my_user}
+
+mkdir /home/${my_user}
+chown ${my_user}:${my_user} /home/${my_user}
+
+exit
 ```
