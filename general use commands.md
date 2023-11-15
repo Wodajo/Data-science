@@ -23,6 +23,23 @@ into `file` (program) use:
 `git config --global credential.helper cache`
 `git config --global --unset credential.helper`
 
+set `vimdiff` as default merge tool
+`git config merge.tool vimdiff`
+`git config merge.conflictstyle diff3`
+`git config mergetool.prompt false`
+
+``` nottested
+`git mergetool`
+	LOCAL - file from current branch
+	BASE - common ancestor
+	REMOTE - file you're merging into your branch
+	MERGED - what gets saved in merge commit
+
+`git checkout --ours local_filename` use this
+`git checkout --theirs remote_filename` or use this
+`git add chosen_filename`
+`git commit`
+```
 ### printing settings
 `system-config-printer` (gtk gui)
 `127.0.0.1:631` CUPS web interface

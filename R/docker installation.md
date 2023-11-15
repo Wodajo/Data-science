@@ -28,7 +28,7 @@ przykład (lepiej zamontować pakiety via renv cache -> patrz "start" header)
 
 
 ### start
-Cache powinien miec osobną, montowalą do contenerów lokalizację.
+Cache powinien miec osobną, montowalą do kontenerów lokalizację.
 `renv::paths$cache()` - shows current cache
 Można podać ścieżkę podczas odpalania kontenera
 ```
