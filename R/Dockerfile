@@ -5,6 +5,7 @@ LABEL source="https://github.com/Wodajo/Data-science/R/Dockerfile"
 
 MAINTAINER Wodajo <wodajo@pm.me>
 
+#-e ROOT=TRUE
 #RUN apt-get update && \
 #RUN    apt-get upgrade -y && \
 #RUN    apt-get install -y \
@@ -33,6 +34,6 @@ RUN Rscript -e "pak::pkg_install('renv')"
 #COPY --chown=rstudio:rstudio rstudio/.Rprofile /home/rstudio/
 
 
-WORKDIR /home/rstudio
+#WORKDIR /home/rstudio
 
 
