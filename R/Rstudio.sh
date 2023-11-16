@@ -14,13 +14,12 @@ else
 	docker run \
 	--name rstudio_wodajo --restart=always \
 	-e USERID=$(id -u) -e GROUPID=$(id -g) \
-       	-v $1:$1 -v $2:/projects \
+       	-v $1:$1 -v $2:/home/rstudio/projects \
 	-v "${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}" \
 	-e "RENV_PATHS_CACHE"="${RENV_PATHS_CACHE_CONTAINER}" \
 	-e PASSWORD=$3 \
 	-d \
 	-p $4:$4 \
-	-e "R -s -e 'renv::restore()'" \
-	rstudio_wodajo_test1
+	rstudio_wodajo_test6
 fi
 echo '[+] done'
