@@ -21,7 +21,7 @@ if you don't have one (new species)
 `./build.sh`
 `find . -name "*.fq.gz" -exec cat {} + > all.fq.gz`
 `./rattle cluster -i ../../all.fq -t 15 - o ../../ --iso --rna`
-a
+
 ### fast5->slow5`
 move fast5_fail to fast5_pass
 `docker run -it --rm --name slow5tools -v "$PWD":/patient14 --log-driver none slow5tools bash`
