@@ -39,6 +39,34 @@ move fast5_fail to fast5_pass
 	`-t` 15 threads
 
 
+# pod5 <-> slow5
+https://github.com/Psy-Fer/blue-crab
+try:
+```
+conda create -n blue_crab python=3.8
+conda activate blue_crab
+python3 -m venv ./blue-crab-venv
+source ./blue-crab-venv/bin/activate
+python3 -m pip install --upgrade pip
+pip install blue-crab
+```
+might be neccessairy to do in docker, bcos of system deps: zlib1g-dev
+
+```
+# pod5 file -> slow5/blow5 file
+blue-crab p2s example.pod5 -o example.blow5
+
+# pod5 directory -> slow5/blow5 directory
+blue-crab p2s pod5_dir -d blow5_dir
+
+# slow5/blow5 -> pod5
+blue-crab s2p example.blow5 -o example.pod5
+```
+
+POD5 are ONT-dependent, we might encounter errors if they do sth reckless.
+Check Slow5 with slow5tools quickcheck.
+
+
 ### index fq&blow5
 `conda create -n f5c -c bioconda -c conda-forge f5c`
 `conda activate f5c`
@@ -46,6 +74,7 @@ move fast5_fail to fast5_pass
 `f5c index /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5`
 	reads db is mapped to blow5 location - from now on paths can't be relative
 	IMPORTANT - there should only be `blow5`'s in a director with it, bcos otherwise it will generate segmentation fault
+
 ### eventalign
 `f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq -b /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 15 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt`
 

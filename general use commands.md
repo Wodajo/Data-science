@@ -23,7 +23,7 @@ into `file` (program) use:
 `git config --global credential.helper cache`
 `git config --global --unset credential.helper`
 
-set `vimdiff` as default merge tool
+set `vimdiff` as default merge tool:
 `git config merge.tool vimdiff`
 `git config merge.conflictstyle diff3`
 `git config mergetool.prompt false`

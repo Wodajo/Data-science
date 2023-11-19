@@ -60,9 +60,15 @@ or export `RENV_PATHS_CACHE` via `Renviron.site` (R installation's site-wide) du
 # -Y Enables trusted X11 forwarding
 # -L Specifies that connections to the given TCP port or Unix socket on the local (client) host are to be forwarded to the given host and port
 
-ssh -N -f -Y -L 8888:localhost:8888 wodajo@192.168.1.42
+ssh -N -f -Y -L localhost:8888:192.168.1.3:8080 wodajo@44.11.22.33
 ```
-
+`ssh -L 8888:192.168.1.3:8080 kali@44.11.22.33`
+	forward from localhost:8888 (because there is nothing before 8888 - localhost assumed) (client) -> 44.11.22.33 (server) -de-encapsulation-> forward -> 192.168.1.3:8080
+![local forward](local_forward.png)
+firefox
+	about:config
+	network.security.ports.banned.override
+	select port for override (otherwise it will be blocked)
 ### new user
 ```bash
 # docker ps -a

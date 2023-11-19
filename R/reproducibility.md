@@ -1,3 +1,6 @@
+Rstudio_server user must be in rstudio-server group
+	usermod -aG rstudio-server username
+
 `.libPaths()` - list libraries (dirs with packages)
 
 ## renv
@@ -37,3 +40,27 @@ or export `RENV_PATHS_CACHE` via `Renviron.site` (R installation's site-wide) du
 `install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))` - installation (or `install.packages("pak")` from CRAN)
 
 `pak::pkg_install('ggplot2')`
+
+CAN BE USED TO INSTALL SYSTEM DEPS
+`pak::pkg_system_requirements("curl", "ubuntu", "20.04")`
+	to check
+`R -q -e 'pak::pak("curl")'
+	powinen zainstalowac depsy systemowe
+
+
+### dir scheme
+
+raw - raw data
+	sample1
+	sample2
+	control1
+	control2
+	ref - place for reference genome, transcriptome, anotation etc.
+	(could be in "out" if created in the project)
+out - processed data e.g. cleaned/intermediate files.
+code - functions, scripts
+doc - todo lists, workflow/troubleshootig logs
+figs - figures, vizualisations
+
+output of each procedure into separate subdir
+modularize your code - into single-purpose scripts
