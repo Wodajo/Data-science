@@ -4,34 +4,60 @@ from OOP import Reference, Sample
 # try to do this in a OOP way
 # each sample as object
 
-def get_raw_dirs_paths_list():
-    SCRIPT_DIR_PATH = os.path.dirname(os.path.abspath(__file__))  # get absolute path of dir form which the script is run
-    RAW_DIR_PATH = f'"{os.path.join(SCRIPT_DIR_PATH, "dump", "raw")}"'  # ./dump/raw
-    RAW_DIRS_PATHS_LIST = os.popen(f"find {RAW_DIR_PATH} -mindepth 1 -maxdepth 1 -type d | sort").read().splitlines()
-    return RAW_DIRS_PATHS_LIST
 
-def create_samples_to_list(RAW_DIRS_PATHS_LIST):
+def get_raw_dirs_paths_list():
+    script_dir_path = os.path.dirname(os.path.abspath(__file__))  # get absolute path of dir form which the script is run
+    raw_dir_path = f'"{os.path.join(script_dir_path, "dump", "raw")}"'  # ./dump/raw
+    raw_dirs_paths_list = os.popen(f"find {raw_dir_path} -mindepth 1 -maxdepth 1 -type d | sort").read().splitlines()
+    return raw_dirs_paths_list
+
+
+def set_samples_names_and_main_dir_to_dict(raw_dirs_paths_list):
     # sample_list = []  # I don't really care about order here
     sample_dict = {}  # name should be a unique identifier
-    for sample in RAW_DIRS_PATHS_LIST:
+    for sample in raw_dirs_paths_list:
         sample_name = str(sample.split('/')[-1])
         if sample_name == "ref":
             continue
-        sample = Sample(name=sample_name)
-        sample_dict[sample_name] = sample
-    for name,sample in sample_dict.items():  # check
-        print(f'Name: {name}, Sample: {sample}')
+        sample_instance = Sample(name=sample_name, sample_main_dir_path=sample)
+        sample_dict[sample_name] = sample_instance
+    # for name, sample_instance in sample_dict.items():  # check
+    #     print(f'Kay: {name}, Sample name: {sample_instance._name}, Sample dir: {sample_instance._sample_main_dir_path}')
     return sample_dict
 
 
+def get_set_fast5_dirs_paths(sample_dict):
+    for name, sample_instance in sample_dict.items():
+        command = f'find "{sample_instance._sample_main_dir_path}" -type d -name "fast5*" | sort'
+        sample_instance._fast5_dirs_paths_list = os.popen(command).read()
+    for key, value in sample_dict.items():  # check
+        print(f'Kay: {key}, Sample name: {value._name}\nSample fast5 list: {value._fast5_dirs_paths_list}\nSample main dir path: {value._sample_main_dir_path}\n\n')
+
 '''
+        command = f'find {sample_instance._sample_main_dir_path} -mindepth 2 -type f -name "fast5_pass*" | sort'
 
-print(f'[+] names of samples for further analysis:')
-    for sample in RAW_SAMPLE_DIRS_list:
-        sample = str(sample.split('/')[-1])
-        RAW_SAMPLE_NAMES_ALL_list.append(sample)
-        print(f'{sample}')
+    command = f'find {RAW_DIR} -mindepth 2 -type f -name "fast5_pass*" | sort'
+    RAW_FAST5_FILES_PASS_ALL = os.popen(command).read()
+    get_paths.RAW_FAST5_FILES_PASS_ALL_list = RAW_FAST5_FILES_PASS_ALL.splitlines()
+    command = f'find {RAW_DIR} -mindepth 2 -type f -name "fast5_fail*" | sort'
+    RAW_FAST5_FILES_FAIL_ALL = os.popen(command).read()
+    get_paths.RAW_FAST5_FILES_FAIL_ALL_list = RAW_FAST5_FILES_FAIL_ALL.splitlines()
+    get_paths.RAW_FAST5_FILES_ALL_list = get_paths.RAW_FAST5_FILES_PASS_ALL_list + get_paths.RAW_FAST5_FILES_FAIL_ALL_list
+    get_paths.RAW_FAST5_FILES_ALL_SAMPLE_list = []
+    get_paths.RAW_FAST5_FILES_ALL_CONTROL_list = []
+    get_paths.RAW_FAST5_FILES_ALL_NOT_MATCHED_list = []
+    command = f'find {RAW_DIR} -mindepth 1 -maxdepth 1 -type d -name "ref"'
+    get_paths.RAW_REF_DIR = os.popen(command).read()
+    command = f'find "{get_paths.RAW_REF_DIR.rstrip()}" -type f'
+    get_paths.RAW_REF_ALL = os.popen(command).read()
+    get_paths.RAW_REF_ALL_list = get_paths.RAW_REF_ALL.splitlines()
 
+
+
+
+
+def set_sample_fast5_paths(sample_dict):
+    pass
 
 
 

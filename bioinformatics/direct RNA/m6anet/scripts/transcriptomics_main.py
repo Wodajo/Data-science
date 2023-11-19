@@ -1,10 +1,10 @@
-from nanopore_basic_func import get_raw_dirs_paths_list,create_samples_to_list
+from nanopore_basic_func import get_raw_dirs_paths_list,set_samples_names_and_main_dir_to_dict,get_set_fast5_dirs_paths
 
 # ------------------- Methylation
 
-RAW_DIRS_PATHS_LIST = get_raw_dirs_paths_list()
-create_samples_to_list(RAW_DIRS_PATHS_LIST)
-
+raw_dirs_paths_list = get_raw_dirs_paths_list()
+sample_dict = set_samples_names_and_main_dir_to_dict(raw_dirs_paths_list)
+get_set_fast5_dirs_paths(sample_dict)
 
 '''
 

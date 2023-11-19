@@ -5,6 +5,7 @@ capitals = {"USA":"Washington DC",
             "Russia":"Moscow"}
 # print(capitals["Germany"])  # if not in the dict -> KeyError
 print(capitals.get("Germany"))  # None if no such key
+print(capitals.get("USA"))
 print(capitals.keys())  # print all keys
 print(capitals.values())  # all values
 print(capitals.items())  # entire dict

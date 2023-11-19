@@ -11,32 +11,24 @@ class Reference:
 
 
 class Sample:  # add per-sample relevant semiproducts
-    def __init__(self, id="", name=""):
-        self.__id = id  # id of sample - for sake of creating them in range() loop. Obsolete?
-        self.__batch = ""  # sample/control
-        self.__name = name  # name of particular sample (e.g. covid1)
-        self.__project_raw_dir_paths_list = []
-        self.__sample_main_dir_path = ""
-        self.__fast5_pass_dir_path = ""
-        self.__fast5_fail_dir_path = ""
-        self.__fast5_dirs_paths_list = []  # path to fast5 pass&fail dirs
-        self.__slow5_dir_path = ""  # one, bcos for now only for m6anet sake
-        self.__fastq_pass_dir_path = ""
-        self.__fastq_fail_dir_path = ""
-        self.__fastq_dirs_paths_list = []
-        self.__fastq_pass_merged_path = ""
-        self.__fastq_fail_merged_path = ""
-        self.__fastq_all_merged_dir_path = ""
-        self.__bam_path = ""
-        self.__bam_index_path = ""
+    def __init__(self, id="", name="", sample_main_dir_path=""):
+        self._id = id  # id of sample - for sake of creating them in range() loop. Obsolete?
+        self._batch = ""  # sample/control
+        self._name = name  # name of particular sample (e.g. covid1)
+        self._sample_main_dir_path = sample_main_dir_path
+        self._fast5_pass_dir_path = ""
+        self._fast5_fail_dir_path = ""
+        self._fast5_dirs_paths_list = []  # path to fast5 pass&fail dirs
+        self._slow5_dir_path = ""  # one, bcos for now only for m6anet sake
+        self._fastq_pass_dir_path = ""
+        self._fastq_fail_dir_path = ""
+        self._fastq_dirs_paths_list = []
+        self._fastq_pass_merged_path = ""
+        self._fastq_fail_merged_path = ""
+        self._fastq_all_merged_dir_path = ""
+        self._bam_path = ""
+        self._bam_index_path = ""
 
-
-
-
-
-
-
-''''
 
         # def create_instances_of_Sample_class(self):
     #     sample_list = []
@@ -48,6 +40,7 @@ class Sample:  # add per-sample relevant semiproducts
 
 
 
+'''
 
 def get_paths():
 
