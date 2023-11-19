@@ -73,7 +73,7 @@ Check Slow5 with slow5tools quickcheck.
 
 `f5c index /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5`
 	reads db is mapped to blow5 location - from now on paths can't be relative
-	IMPORTANT - there should only be `blow5`'s in a director with it, bcos otherwise it will generate segmentation fault
+	IMPORTANT - there should only be `blow5`'s in a directory with it, bcos otherwise it will generate segmentation fault
 
 ### eventalign
 `f5c eventalign -r /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.fq -b /media/twardovsky/sda/Mateusz_Kurzyński/patient14/patient14.bam -g /media/twardovsky/sda/Mateusz_Kurzyński/ref.fa --slow5 /media/twardovsky/sda/Mateusz_Kurzyński/patient14/signals.blow5 --scale-events --signal-index --summary /media/twardovsky/sda/Mateusz_Kurzyński/patient14/final_summary.txt -t 15 --rna > /media/twardovsky/sda/Mateusz_Kurzyński/patient14/eventalign.txt`

@@ -1,36 +1,36 @@
 import os
 import re
-from OOP import Reference, Sample
+
 # try to do this in a OOP way
 # each sample as object
 
-def get_raw_dirs_paths_list():
-    SCRIPT_DIR_PATH = os.path.dirname(os.path.abspath(__file__))  # get absolute path of dir form which the script is run
-    RAW_DIR_PATH = f'"{os.path.join(SCRIPT_DIR_PATH, "dump", "raw")}"'  # ./dump/raw
-    RAW_DIRS_PATHS_LIST = os.popen(f"find {RAW_DIR_PATH} -mindepth 1 -maxdepth 1 -type d | sort").read().splitlines()
-    return RAW_DIRS_PATHS_LIST
-
-def create_samples_to_list(RAW_DIRS_PATHS_LIST):
-    # sample_list = []  # I don't really care about order here
-    sample_dict = {}  # name should be a unique identifier
-    for sample in RAW_DIRS_PATHS_LIST:
-        sample_name = str(sample.split('/')[-1])
-        if sample_name == "ref":
-            continue
-        sample = Sample(name=sample_name)
-        sample_dict[sample_name] = sample
-    for name,sample in sample_dict.items():  # check
-        print(f'Name: {name}, Sample: {sample}')
-    return sample_dict
+# use python3 for scripts
+# - no wierd escaping rules
+# - usefull for later (ML libraries)
 
 
-'''
+# extract raw subdirs
+# declare important paths:
+# - fast5 dirs
+# - reference transcriptome
 
-print(f'[+] names of samples for further analysis:')
-    for sample in RAW_SAMPLE_DIRS_list:
-        sample = str(sample.split('/')[-1])
-        RAW_SAMPLE_NAMES_ALL_list.append(sample)
-        print(f'{sample}')
+def dec_gate(dec):
+    if dec == "" or dec.lower().strip() == "y" or dec.lower().strip() == "yes":
+        dec = True
+    else:
+        dec = False
+    return dec
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -162,14 +162,6 @@ def naming_scheme():  # strictly codependent with get_paths()
         print(f"{ref}")
     naming_scheme.TRANSCRIPT_REFERENCE = str(input(f"[+] enter path to transcript reference: "))
 
-def dec_gate(dec):
-    if dec == "" or dec.lower().strip() == "y" or dec.lower().strip() == "yes":
-        dec = True
-    else:
-        dec = False
-    return dec
-
-
 def map_and_index(dec):
     # ------ index transcript ref
    if dec:
@@ -196,4 +188,4 @@ def map_and_index(dec):
 # - aligning
 # - indexing
 #- basecalling
-'''
+# - ...

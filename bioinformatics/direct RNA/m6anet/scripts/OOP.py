@@ -1,30 +1,56 @@
 import os
 import re
-from OOP import Reference, Sample
-# try to do this in a OOP way
-# each sample as object
 
-def get_raw_dirs_paths_list():
-    SCRIPT_DIR_PATH = os.path.dirname(os.path.abspath(__file__))  # get absolute path of dir form which the script is run
-    RAW_DIR_PATH = f'"{os.path.join(SCRIPT_DIR_PATH, "dump", "raw")}"'  # ./dump/raw
-    RAW_DIRS_PATHS_LIST = os.popen(f"find {RAW_DIR_PATH} -mindepth 1 -maxdepth 1 -type d | sort").read().splitlines()
-    return RAW_DIRS_PATHS_LIST
-
-def create_samples_to_list(RAW_DIRS_PATHS_LIST):
-    # sample_list = []  # I don't really care about order here
-    sample_dict = {}  # name should be a unique identifier
-    for sample in RAW_DIRS_PATHS_LIST:
-        sample_name = str(sample.split('/')[-1])
-        if sample_name == "ref":
-            continue
-        sample = Sample(name=sample_name)
-        sample_dict[sample_name] = sample
-    for name,sample in sample_dict.items():  # check
-        print(f'Name: {name}, Sample: {sample}')
-    return sample_dict
+class Reference:
+    def __init__(self):
+        self.__ref_transcriptome_path = ""
+        self.__ref_genome_path = ""
+        self.__ref_gtf_path = ""
+        self.__ref_transcriptome_index_path = ""
+        pass
 
 
-'''
+class Sample:  # add per-sample relevant semiproducts
+    def __init__(self, id="", name=""):
+        self.__id = id  # id of sample - for sake of creating them in range() loop. Obsolete?
+        self.__batch = ""  # sample/control
+        self.__name = name  # name of particular sample (e.g. covid1)
+        self.__project_raw_dir_paths_list = []
+        self.__sample_main_dir_path = ""
+        self.__fast5_pass_dir_path = ""
+        self.__fast5_fail_dir_path = ""
+        self.__fast5_dirs_paths_list = []  # path to fast5 pass&fail dirs
+        self.__slow5_dir_path = ""  # one, bcos for now only for m6anet sake
+        self.__fastq_pass_dir_path = ""
+        self.__fastq_fail_dir_path = ""
+        self.__fastq_dirs_paths_list = []
+        self.__fastq_pass_merged_path = ""
+        self.__fastq_fail_merged_path = ""
+        self.__fastq_all_merged_dir_path = ""
+        self.__bam_path = ""
+        self.__bam_index_path = ""
+
+
+
+
+
+
+
+''''
+
+        # def create_instances_of_Sample_class(self):
+    #     sample_list = []
+    #     for i in range(1,len(self.RAW_DIRS_PATHS_LIST)):  # exclude last - we want it bcos ref
+    #         sample_id = f"sample{i}"
+    #         sample = Sample(id=sample_id)
+    #         sample_list.append(sample)
+
+
+
+
+
+def get_paths():
+
 
 print(f'[+] names of samples for further analysis:')
     for sample in RAW_SAMPLE_DIRS_list:
@@ -36,11 +62,6 @@ print(f'[+] names of samples for further analysis:')
 
 
 
-def get_paths():
-    script_dir = os.path.dirname(os.path.abspath(__file__))  # get absolute path of dir form which the script is run
-    RAW_DIR = f'"{os.path.join(script_dir, "dump", "raw")}"'  #  ./dump/raw
-    command = f"find {RAW_DIR} -mindepth 1 -maxdepth 1 -type d | sort"
-    RAW_SAMPLE_DIRS = os.popen(command).read()
     get_paths.RAW_SAMPLE_DIRS_list = RAW_SAMPLE_DIRS.splitlines()  # list created that way, so that functions outside
     # get_paths() recognize this list (and could modify it!)
     get_paths.RAW_SAMPLE_NAMES_ALL_list = []
@@ -110,11 +131,7 @@ def get_paths():
         print(f"{fastq}")
     print("------------------------------")
     # ------- sample/control&reference selection
-    print(f'[+] names of samples for further analysis:')
-    for sample in get_paths.RAW_SAMPLE_DIRS_list:
-        sample = str(sample.split('/')[-1])
-        get_paths.RAW_SAMPLE_NAMES_ALL_list.append(sample)
-        print(f'{sample}')
+
     naming_scheme()
     print("---------------------------------")
     print(f'[+] samples/batch1 {get_paths.RAW_SAMPLE_NAMES_SAMPLE_list}\n'
@@ -161,39 +178,4 @@ def naming_scheme():  # strictly codependent with get_paths()
     for ref in get_paths.RAW_REF_ALL_list:
         print(f"{ref}")
     naming_scheme.TRANSCRIPT_REFERENCE = str(input(f"[+] enter path to transcript reference: "))
-
-def dec_gate(dec):
-    if dec == "" or dec.lower().strip() == "y" or dec.lower().strip() == "yes":
-        dec = True
-    else:
-        dec = False
-    return dec
-
-
-def map_and_index(dec):
-    # ------ index transcript ref
-   if dec:
-       command = f'samtools faidx {naming_scheme.TRANSCRIPT_REFERENCE}'
-       os.popen(command)
-   minimap_flags = "-ax map-ont -L --split-prefix=tmp"
-
-
-
-    # # ------ concatenate fq -> byłoby łatwiej OOP
-    # for sample in get_paths.RAW_FASTQ_FILES_ALL_SAMPLE_list:
-    #     check1 = sample.split('/')[-3]
-    #     check1 = sample.split('/')[-3]
-    #     if sample in :
-    # command = f'cat {}'
-    # get_paths.RAW_SAMPLE_NAMES_ALL_list
-    #
-    # for fastq_prefix in x:
-    # command = (f'minimap2 {minimap_flags} {naming_scheme.TRANSCRIPT_REFERENCE} '
-    #            f'{fastq_prefix}.fq.gz | samtools view -bh | samtools sort -O bam > {fastq_prefix}.bam;'
-    #            f'samtools index {fastq_prefix}.bam')
-
-# functions for:
-# - aligning
-# - indexing
-#- basecalling
-'''
+    '''
