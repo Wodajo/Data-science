@@ -6,6 +6,9 @@ from OOP import Reference, Sample
 
 # function for data prep & check if averything is in order for analysis
 
+def now():
+	return datetime.datetime.now().strftime('%D:%H:%M:%S')
+
 def get_raw_dirs_paths_list():
     script_dir_path = os.path.dirname(os.path.abspath(__file__))  # get absolute path of dir form which the script is run
     raw_dir_path = f'"{os.path.join(script_dir_path, "dump", "raw")}"'  # ./dump/raw

@@ -1,10 +1,12 @@
-from nanopore_basic_func import get_raw_dirs_paths_list,set_samples_names_and_main_dir_to_dict,get_set_fast5_dirs_paths
+from nanopore_basic_func import get_raw_dirs_paths_list,set_samples_names_and_main_dir_to_dict,get_set_fast5_dirs_paths,now
 
 # ------------------- Methylation
 
+print(f'Check fcji now() {now()}')
 raw_dirs_paths_list = get_raw_dirs_paths_list()
 sample_dict = set_samples_names_and_main_dir_to_dict(raw_dirs_paths_list)
 get_set_fast5_dirs_paths(sample_dict)
+
 
 '''
 
