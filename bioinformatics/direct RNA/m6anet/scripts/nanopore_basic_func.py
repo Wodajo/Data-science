@@ -4,6 +4,7 @@ from OOP import Reference, Sample
 # try to do this in a OOP way
 # each sample as object
 
+# function for data prep & check if averything is in order for analysis
 
 def get_raw_dirs_paths_list():
     script_dir_path = os.path.dirname(os.path.abspath(__file__))  # get absolute path of dir form which the script is run
@@ -30,8 +31,39 @@ def get_set_fast5_dirs_paths(sample_dict):
     for name, sample_instance in sample_dict.items():
         command = f'find "{sample_instance._sample_main_dir_path}" -type d -name "fast5*" | sort'
         sample_instance._fast5_dirs_paths_list = os.popen(command).read()
+        # -- extract fast5 dirs from fast5_dirs_paths_list
+        fast5_dirs_list = sample_instance._fast5_dirs_paths_list  # working copy
+        for fast5_dir in fast5_dirs_list:
+            try:
+                if "_pass" in fast5_dir:
+                    sample_instance._fast5_pass_dir_path = str(fast5_dir)
+                elif "_fail" in fast5_dir:
+                    sample_instance._fast5_pass_dir_path = str(fast5_dir)
+                else:
+                    print(f'[+] Warning - detected fast5 dirs not named "_pass" or "_fail"\n'
+                          f'[+] {fast5_dir}')
+            except:
+                print(f'[+] Error in get_set_fast5_dirs_paths() - fast5')
+        command = f'find "{sample_instance._sample_main_dir_path}" -type d -name "fastq*" | sort'
+        sample_instance._fastq_dirs_paths_list = os.popen(command).read()
+        # -- extract fastq dirs from fastq_dirs_paths_list
+        fastq_dirs_list = sample_instance._fastq_dirs_paths_list
+        for fastq_dir in fastq_dirs_list:
+            try:
+                if "_pass" in fastq_dir:
+                    sample_instance.__fastq_pass_dir_path = str(fastq_dir)
+                elif "_fail" in fastq_dir:
+                    sample_instance._fast5_fail_dir_path = str(fastq_dir)
+                else:
+                    print(f'[+] Warning - detected fastq dirs not named "_pass" or "_fail"\n'
+                          f'[+] {fastq_dir}')
+            except:
+                    print(f'Error in get_set_fast5_dirs_paths() - fastq')
     for key, value in sample_dict.items():  # check
         print(f'Kay: {key}, Sample name: {value._name}\nSample fast5 list: {value._fast5_dirs_paths_list}\nSample main dir path: {value._sample_main_dir_path}\n\n')
+
+
+
 
 '''
         command = f'find {sample_instance._sample_main_dir_path} -mindepth 2 -type f -name "fast5_pass*" | sort'

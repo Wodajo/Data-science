@@ -1,6 +1,3 @@
-import os
-import re
-
 class Reference:
     def __init__(self):
         self.__ref_transcriptome_path = ""
